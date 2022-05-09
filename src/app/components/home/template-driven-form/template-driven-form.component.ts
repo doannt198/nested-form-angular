@@ -20,9 +20,9 @@ export class TemplateDrivenFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  onSubmit(formsignin: any) {
-    console.log(formsignin.value);
-    this.data = formsignin.value;
+  onSubmit(formsignin:any) {
+    console.log(formsignin.value)
+    console.log("data", this.user.soThich)
   }
   addSoThich() {
     this.user.soThich.push({
