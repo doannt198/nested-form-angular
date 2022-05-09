@@ -1,0 +1,8 @@
+
+<div style="width:400px" >
+    <div class="name">{{datadetail?.name}}</div>
+    <div class="description">{{datadetail?.description}}</div>
+    <img [src]="datadetail?.url" [alt]="datadetail?.url">
+    <button (click)="toFormEdit(datadetail.id)"> Sửa</button>
+</div>
+

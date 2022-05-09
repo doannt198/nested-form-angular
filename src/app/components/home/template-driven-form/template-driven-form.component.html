@@ -1,0 +1,40 @@
+<div class="wrapper">
+<form (ngSubmit)="onSubmit(formsignin)" #formsignin="ngForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Họ tên </label>
+      <input type="text" class="form-control" name="hoTen" [(ngModel)]="user.hoTen" >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Địa chỉ</label>
+      <input type="text" class="form-control" name="diaChi"  [(ngModel)]="user.diaChi"  >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Số điện thoại</label>
+      <input type="text" class="form-control" name="dienThoai" [(ngModel)]="user.dienThoai">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Email</label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="user.email">
+    </div>
+    {{user.soThich|json}}
+    <div class="mb-3" >
+      <div *ngFor="let c of user.soThich; index as i">
+        <div *ngIf="user.soThich.length">
+        <label for="exampleInputPassword1" class="form-label">Sở thích</label>
+        <input type="text" class="form-control mt-3" placeholder="Thứ tự" name="thuTu" [(ngModel)]="user.soThich[0].thuTu" >
+        <input type="text" class="form-control mt-3" placeholder="Tên" name="ten" [(ngModel)]="user.soThich[0].ten" >
+        <button type="button" class="btn btn-primary mt-3" (click)="removeSoThich(i)"> Xoá</button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addSoThich()"> Thêm</button>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Công ty</label>
+      <input type="text" class="form-control mt-3" placeholder="Tên công ty" name="tenCongty" [(ngModel)]="user.tenCongTy">
+      <input type="text" class="form-control mt-3" placeholder="Địa chỉ công ty" name="diaChiCongTy" [(ngModel)]="user.diaChiCongTy">
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu lại </button>
+  </form>
+  {{data|json}}
+</div>
+

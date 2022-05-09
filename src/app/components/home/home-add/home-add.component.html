@@ -1,0 +1,37 @@
+<form (submit)="onSubmit(submitform)" #submitform="ngForm">
+    <div>Name</div> 
+    <input type="text" [(ngModel)]="name" name="name">
+    <div>Des</div>
+    <input type="text" [(ngModel)]="description" name="description">
+    <div>Url</div>
+    <input type="text" [(ngModel)]="url" name="url"> <br>
+    <button type="submit">Save</button>
+</form>
+
+<h1>List</h1>
+<div *ngFor="let item of listProduct" style="width:600px"> 
+<div class="product-name">{{item?.name}}</div>
+<div class="product-description">{{item?.description}}</div>
+<div class="product-url">
+    <img [src]="item?.url" [alt]="item?.img" style="width:200px; height:200px">
+</div>
+<button (click)="toFormDetail(item.id)">Xem chi tiết</button> <br>
+<button (click)="onDelete(item.id)" >Xoá </button> 
+<button (click)="showDialogEdit(item)">Sửa</button>
+
+</div>
+<p-dialog header="Edit" 
+[(visible)]="displayEdit"
+ [style]="{width: '50vw'}"
+ [closeOnEscape]="true"
+ >
+ <form (submit)="onSubmit(submitform)" #submitform="ngForm">
+    <div>Name</div> 
+    <input type="text" [(ngModel)]="name" name="name">
+    <div>Des</div>
+    <input type="text" [(ngModel)]="description" name="description">
+    <div>Url</div>
+    <input type="text" [(ngModel)]="url" name="url"> <br>
+    <button type="submit">Save</button>
+</form>
+</p-dialog>

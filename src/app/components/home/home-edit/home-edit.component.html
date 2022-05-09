@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <label> Name</label>
+    <input type="text" formControlName="name" >
+    <div class="required" *ngIf="form.controls.name.errors?.required && form.controls.name.touched">required</div>
+    <div class="required" *ngIf="form.controls.name.errors?.minlength && form.controls.name.touched">Nhập tối thiểu  ký tự</div>
+    <label> Pass</label>
+    <input type="password" formControlName="pass" maxlength="41"> <br>
+    <div class="required" *ngIf="form.controls.pass.errors?.required && form.controls.pass.touched">required</div>
+    <div class="required" *ngIf="form.controls.pass.errors?.minlength "> Mật khẩu tối thiểu 6 ký tự</div>
+    <div class="required" *ngIf="form.controls.pass.errors?.maxlength "> Mật khẩu tối đa 40 ký tự</div>
+  <!--   Xác thực password có hợp lệ hay không -->
+    <label> Confirm Pass</label>
+    <input type="password" formControlName="repass"> <br>
+    <div class="required" *ngIf="form.controls.repass.errors?.matching"> Mật khẩu không khớp</div>
+    <label> Name++</label>
+    <input type="text" formControlName="nameplus">
+    <div class="required" *ngIf="form.controls.nameplus.errors?.required && form.controls.nameplus.touched"> required </div>
+    <label> Pass ++</label>
+    <input type="text" formControlName="passplus"> <br>
+    <div class="required" *ngIf="form.controls.passplus.errors?.required && form.controls.passplus.touched"> required </div>
+    <div formGroupName="infogroup" >
+    <label> Name test</label>
+    <input type="text" formControlName="nametest">
+    <div class="required" *ngIf="form.get('infogroup.nametest')?.errors?.required && form.get('infogroup.nametest')?.touched" > Required</div>
+    <label> Pass test</label>
+    <input type="text" formControlName="passtest"> <br>
+    <div class="required" *ngIf="form.get('infogroup.passtest')?.errors?.required && form.get('infogroup.passtest')?.touched">Required</div>
+    </div>
+    <button type="submit" [disabled]="form.invalid"> Save </button>
+</form>
+<input type="text" [formControl]="searchControl">
+<div class="list" *ngFor=" let item of data">
+    <div class="list-name"></div>
+    <div class="list-description"></div>
+    <img src="{{item}}" alt="product" style="width:200px">
+</div>
