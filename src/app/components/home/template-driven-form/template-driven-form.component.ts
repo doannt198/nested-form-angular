@@ -12,6 +12,7 @@ export class TemplateDrivenFormComponent implements OnInit {
     hoTen: '',
     diaChi: '',
     dienThoai: '',
+    check: false,
     email: '',
     soThich: [],
     congTy:{

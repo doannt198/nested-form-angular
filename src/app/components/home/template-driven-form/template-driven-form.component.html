@@ -2,7 +2,7 @@
   <form (ngSubmit)="onSubmit(formsignin)" #formsignin="ngForm">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Họ tên </label>
-      <input type="text" class="form-control" name="hoTen" [(ngModel)]="user.hoTen" required #hoTen="ngModel">
+      <input type="text" class="form-control" name="hoTen" [(ngModel)]="user.hoTen" required  #hoTen="ngModel">
       <div class="required"
         *ngIf="submitted && hoTen?.errors?.required ||  (hoTen?.touched && hoTen?.errors?.required)">required!</div>
     </div>
@@ -14,12 +14,13 @@
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Số điện thoại</label>
-      <input type="number" class="form-control" name="dienThoai" [(ngModel)]="user.dienThoai" required
+      <input type="number" class="form-control" name="dienThoai" [(ngModel)]="user.dienThoai" required = {{user.check}}
         #dienThoai="ngModel">
       <div class="required"
         *ngIf="submitted && dienThoai?.errors?.required || (dienThoai?.touched && dienThoai?.errors?.required)">
         required!
       </div>
+      <input type="checkbox" class="float-end mt-2" name="check" [(ngModel)] = "user.check">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Email</label>
@@ -36,7 +37,6 @@
       <div>
         <div *ngFor="let c of user.soThich; index as i">
           <div class="row">
-            
             <div class="col-5">
               <input type="text" class="form-control mt-3" placeholder="Thứ tự" name="thuTu" [(ngModel)]="c[i].thuTu">
             </div>
