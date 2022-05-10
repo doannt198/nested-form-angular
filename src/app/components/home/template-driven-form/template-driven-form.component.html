@@ -31,11 +31,12 @@
       </div>
     </div>
     <div class="mb-3">
-      <button type="button" class="btn btn-primary" (click)="addSoThich()"> Thêm</button>
+      <label for="exampleInputPassword1" class="form-label"> Sở thích</label>
+      <button type="button" class="btn btn-primary align-top " (click)="addSoThich()"> Thêm</button>
       <div>
         <div *ngFor="let c of user.soThich; index as i">
-          <label for="exampleInputPassword1" class="form-label"> Sở thích</label>
           <div class="row">
+            
             <div class="col-5">
               <input type="text" class="form-control mt-3" placeholder="Thứ tự" name="thuTu" [(ngModel)]="c[i].thuTu">
             </div>
