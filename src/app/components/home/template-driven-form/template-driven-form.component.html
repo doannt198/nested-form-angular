@@ -19,7 +19,7 @@
     <div class="mb-3">
     
         <div *ngFor="let c of user.soThich; index as i">
-          <div ngModelGroup="soThich" *ngIf="user.soThich.length">
+          <div *ngIf="user.soThich.length">
             <label for="exampleInputPassword1" class="form-label">Sở thích</label>
 
             <input type="text" class="form-control mt-3" placeholder="Thứ tự" name="thuTu"
