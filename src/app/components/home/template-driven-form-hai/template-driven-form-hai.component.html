@@ -1,42 +1,43 @@
 <div class="wrapper">
-    <form>
+    <form (ngSubmit)="onSubmit(submitForm)" #submitForm="ngForm" >
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"> Họ tên</label>
-          <input type="email" class="form-control" >
+          <input type="text" class="form-control" name="hoTen" [(ngModel)]="user.hoTen" required #hoTen="ngModel">
+          <div *ngIf="submited && hoTen?.errors?.required || (hoTen?.errors?.required && hoTen?.touched)">
+            Trường này không được để trống
+          </div>
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"> Địa chỉ</label>
-          <input type="email" class="form-control" >
+          <input type="text" class="form-control" name="diaChi" [(ngModel)]="user.diaChi" >
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"> Số điện thoại</label>
-          <input type="email" class="form-control" >
+          <input type="text" class="form-control" name="dienThoai" [(ngModel)]="user.dienThoai">
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"> Email</label>
-          <input type="email" class="form-control" >
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input type="email" class="form-control" name="email" [(ngModel)]="user.email">
         </div>
         <div class="mb-3">
           <label class="form-check-label" for="exampleCheck1"> Sở thích</label>
-          <button type="button" class="btn btn-primary float-end"> Thêm</button>
-         <div class="row mt-4">
-             <div class="col-5">
-                <input type="password" class="form-control" placeholder="Thư tự">
-             </div>
-             <div class="col-5">
-                <input type="password" class="form-control" placeholder="Tên">
-             </div>
-             <div class="col-2">
-                <button type="submit" class="btn btn-primary"> Xoá</button>
-             </div>
-         </div>
-         <label class="form-check-label mt-3"> Công ty</label>
-         <input type="password" class="form-control mt-3" id="exampleInputPassword1">
-         <input type="password" class="form-control mt-3" id="exampleInputPassword1">
+          <button type="button" class="btn btn-primary float-end" (click)="addSoThich()"> Thêm</button>
+          <div *ngFor="let c of user.soThich; index as i">
+            <div class="row mt-4" *ngIf="user.soThich && user.soThich.length > 0">
+              <div class="col-5">
+                <input type="text" class="form-control" placeholder="Thư tự" name="thuTu" [(ngModel)]="c[i].thuTu">
+              </div>
+              <div class="col-5 ">
+                <input type="text" class="form-control" placeholder="Tên" name="ten" [(ngModel)]="c[i].ten">
+              </div>
+              <div class="col-2">
+                <button type="submit" class="btn btn-primary" (click)="removesoThich(i)"> Xoá</button>
+              </div>
+            </div>
+          </div>
+          <label class="form-check-label mt-3"> Công ty</label>
+          <input type="text" class="form-control mt-3" id="exampleInputPassword1">
+          <input type="text" class="form-control mt-3" id="exampleInputPassword1">
         </div>
        <!--  <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
         <button type="submit" class="btn btn-primary"> Lưu</button>
