@@ -1,82 +1,89 @@
-
-
 <form [formGroup]="formTest" (ngSubmit)="onSubmit(formTest)">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label required">Họ tên</label>
-      <input type="text" class="form-control" formControlName="hoTen" >
-      <div class="validator mt-2" *ngIf="formTest?.controls?.hoTen?.errors?.required && formTest?.controls?.hoTen?.touched">
-        Trường này không được để trống
-      </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label required">Họ tên</label>
+    <input type="text" class="form-control" formControlName="hoTen">
+    <div class="validator mt-2"
+      *ngIf="formTest?.controls?.hoTen?.errors?.required && formTest?.controls?.hoTen?.touched">
+      Trường này không được để trống
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label required">Địa chỉ</label>
-      <input type="text" class="form-control" formControlName="diaChi">
-      <div class="validator mt-2" *ngIf="formTest?.controls?.diaChi?.errors?.required && formTest?.controls?.diaChi?.touched">
-        Trường này không được để trống
-      </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label required">Địa chỉ</label>
+    <input type="text" class="form-control" formControlName="diaChi">
+    <div class="validator mt-2"
+      *ngIf="formTest?.controls?.diaChi?.errors?.required && formTest?.controls?.diaChi?.touched">
+      Trường này không được để trống
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label required">Số điện thoại</label>
-      <input  class="form-control" formControlName="dienThoai" maxlength="10">
-      <div class="validator mt-2" *ngIf="formTest?.controls?.dienThoai?.errors?.required && formTest?.controls?.dienThoai?.touched">
-        Trường này không được để trống 
-      </div>
-      <div class="validator mt-2" *ngIf="formTest?.controls?.dienThoai?.errors?.maxlength && formTest?.controls?.dienThoai?.touched">
-        Số điện thoại tối đa 10 số 
-      </div>
-      <div class="validator mt-2" *ngIf="formTest?.controls?.dienThoai?.errors?.pattern && formTest?.controls?.dienThoai?.touched">
-       Nhập đúng số điện thoại
-      </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label required">Số điện thoại</label>
+    <input class="form-control" formControlName="dienThoai" maxlength="10">
+    <div class="validator mt-2"
+      *ngIf="formTest?.controls?.dienThoai?.errors?.required && formTest?.controls?.dienThoai?.touched">
+      Trường này không được để trống
     </div>
-    <input type="checkbox" class="float-end mt-2" (change)="check()" formControlName="check">
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label required">Email</label>
-      <input type="text" class="form-control" formControlName="email">
-      <div class="validator mt-2" *ngIf="formTest?.controls?.email?.errors?.required && formTest?.controls?.email?.touched">
-         Trường này không được để trống
-      </div>
-      <div class="validator mt-2" *ngIf="formTest?.controls?.email?.errors?.email && formTest?.controls?.email?.touched">
-         Sai định dạng Email 
-      </div>
+    <div class="validator mt-2"
+      *ngIf="formTest?.controls?.dienThoai?.errors?.maxlength && formTest?.controls?.dienThoai?.touched">
+      Số điện thoại tối đa 10 số
     </div>
-    <div formArrayName="soThich"> 
-        <div *ngFor="let sothich of soThich.controls ; index as i" >
-          <label for="exampleInputPassword1" class="form-label">Sở thích {{i+1}}</label>
-            <div [formGroupName]="i">
-                <label for="exampleInputPassword1" class="form-label">Thứ tự</label>
-                <input type="text" class="form-control" formControlName="thuTu">
-                <label for="exampleInputPassword1" class="form-label">Tên</label>
-                <input type="text" class="form-control " formControlName="ten">
-                <button type="button" class="btn btn-primary mt-3" (click)="removeSoThich(i)" *ngIf="soThich.controls.length > 1">Xoá</button>
-                <div formArrayName="skills">
-                    <div *ngFor="let skill of skill(i).controls ; index as indexskill" >
-                      <label >skill{{indexskill+1}}</label>
-                        <div [formGroupName]="indexskill" >
-                            <label for="exampleInputPassword1" class="form-label" >skill</label>
-                            <input type="text" class="form-control" formControlName="skill">
-                            <label for="exampleInputPassword1" class="form-label">Exp</label>
-                            <input type="text" class="form-control" formControlName="exp">
-                            <button type="button" class="btn btn-primary mt-3" (click)="removeSkill(i,indexskill)">Xoá Skill</button>
-                        </div>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-primary mt-3" (click)="addSkill(i)">Thêm Skill</button>
+    <div class="validator mt-2"
+      *ngIf="formTest?.controls?.dienThoai?.errors?.pattern && formTest?.controls?.dienThoai?.touched">
+      Nhập đúng số điện thoại
+    </div>
+  </div>
+  <input type="checkbox" class="float-end mt-2" (change)="check()" formControlName="check">
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label required">Email</label>
+    <input type="text" class="form-control" formControlName="email">
+    <div class="validator mt-2"
+      *ngIf="formTest?.controls?.email?.errors?.required && formTest?.controls?.email?.touched">
+      Trường này không được để trống
+    </div>
+    <div class="validator mt-2" *ngIf="formTest?.controls?.email?.errors?.email && formTest?.controls?.email?.touched">
+      Sai định dạng Email
+    </div>
+  </div>
+  <div formArrayName="soThich">
+    <div *ngFor="let sothich of soThich.controls ; index as i">
+      <label for="exampleInputPassword1" class="form-label">Sở thích {{i+1}}</label>
+      <div [formGroupName]="i">
+        <label for="exampleInputPassword1" class="form-label">Thứ tự</label>
+        <input type="text" class="form-control" formControlName="thuTu">
+        <label for="exampleInputPassword1" class="form-label">Tên</label>
+        <input type="text" class="form-control " formControlName="ten">
+        <button type="button" class="btn btn-primary mt-3" (click)="removeSoThich(i)"
+          *ngIf="soThich.controls.length > 1">Xoá</button>
+        <div formArrayName="skills">
+          <div *ngFor="let skill of skill(i).controls ; index as indexskill">
+            <label>skill{{indexskill+1}}</label>
+            <div [formGroupName]="indexskill">
+              <label for="exampleInputPassword1" class="form-label">skill</label>
+              <input type="text" class="form-control" formControlName="skill">
+              <label for="exampleInputPassword1" class="form-label">Exp</label>
+              <input type="text" class="form-control" formControlName="exp">
+              <button type="button" class="btn btn-primary mt-3" (click)="removeSkill(i,indexskill)">Xoá Skill</button>
             </div>
+          </div>
         </div>
-        <button type="button" class="btn btn-primary mt-3" (click)="addSoThich()">Thêm</button>
-    </div>
-    <div class="mb-3" formGroupName="congTy">
-        <label for="exampleInputPassword1" class="form-label">Công ty</label>
-        <input type="text" class="form-control mb-3" formControlName="tenCongTy" placeholder="Tên công ty">
-        <div class="validator mt-2" *ngIf="formTest?.get('congTy.tenCongTy')?.errors?.required && formTest?.get('congTy.tenCongTy')?.touched">
-            Trường này không được để trống
-         </div>
-        <input type="text" class="form-control" formControlName="diaChi" placeholder="Địa chỉ công ty">
-        <div class="validator mt-2" *ngIf="formTest?.get('congTy.diaChi')?.errors?.required && formTest?.get('congTy.diaChi')?.touched">
-            Trường này không được để trống
-         </div>
+        <button type="button" class="btn btn-primary mt-3" (click)="addSkill(i)">Thêm Skill</button>
       </div>
-    <button type="submit" class="btn btn-primary" [disabled]="formTest.invalid">Submit</button>
-  </form>
+    </div>
+    <button type="button" class="btn btn-primary mt-3" (click)="addSoThich()">Thêm</button>
+  </div>
+  <div class="mb-3" formGroupName="congTy">
+    <label for="exampleInputPassword1" class="form-label">Công ty</label>
+    <input type="text" class="form-control mb-3" formControlName="tenCongTy" placeholder="Tên công ty">
+    <div class="validator mt-2"
+      *ngIf="formTest?.get('congTy.tenCongTy')?.errors?.required && formTest?.get('congTy.tenCongTy')?.touched">
+      Trường này không được để trống
+    </div>
+    <input type="text" class="form-control" formControlName="diaChi" placeholder="Địa chỉ công ty">
+    <div class="validator mt-2"
+      *ngIf="formTest?.get('congTy.diaChi')?.errors?.required && formTest?.get('congTy.diaChi')?.touched">
+      Trường này không được để trống
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="formTest.invalid">Submit</button>
+</form>
 
-  {{data | json}}
+{{data | json}}

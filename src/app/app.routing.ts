@@ -4,7 +4,9 @@ import { HomeAddComponent } from './components/home/home-add/home-add.component'
 import { HomeDetailComponent } from './components/home/home-detail/home-detail.component';
 import { HomeEditComponent } from './components/home/home-edit/home-edit.component';
 import { HomeComponent } from './components/home/home.component';
+import { ReactiveFormHaiComponent } from './components/home/reactive-form-hai/reactive-form-hai.component';
 import { ReactiveFormComponent } from './components/home/reactive-form/reactive-form.component';
+import { TemplateDrivenFormHaiComponent } from './components/home/template-driven-form-hai/template-driven-form-hai.component';
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
 import { TestComponent } from './components/home/test/test.component';
 import { Test1Component } from './components/home/test1/test1.component';
@@ -49,6 +51,14 @@ const appRoutes: Routes = [
       { 
         path:'template-driven-form',
        component: TemplateDrivenFormComponent
+      },
+      { 
+        path:'reactive-form-hai',
+       component: ReactiveFormHaiComponent
+      },
+      { 
+        path:'tempalte-driven-form-hai',
+       component: TemplateDrivenFormHaiComponent
       },
     ],
   },

@@ -18,6 +18,8 @@ import { TestComponent } from './components/home/test/test.component';
 import { Test1Component } from './components/home/test1/test1.component';
 import { ReactiveFormComponent } from './components/home/reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
+import { TemplateDrivenFormHaiComponent } from './components/home/template-driven-form-hai/template-driven-form-hai.component';
+import { ReactiveFormHaiComponent } from './components/home/reactive-form-hai/reactive-form-hai.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { TemplateDrivenFormComponent } from './components/home/template-driven-f
     Test1Component,
     ReactiveFormComponent,
     TemplateDrivenFormComponent,
+    TemplateDrivenFormHaiComponent,
+    ReactiveFormHaiComponent,
     
   ],
   imports: [
