@@ -41,7 +41,7 @@
     <div formArrayName="soThich"> 
         <div *ngFor="let sothich of soThich.controls ; index as i" >
           <label for="exampleInputPassword1" class="form-label">Sở thích {{i+1}}</label>
-            <div [formGroupName]="i" *ngIf="soThich.controls.length">
+            <div [formGroupName]="i">
                 <label for="exampleInputPassword1" class="form-label">Thứ tự</label>
                 <input type="text" class="form-control" formControlName="thuTu">
                 <label for="exampleInputPassword1" class="form-label">Tên</label>

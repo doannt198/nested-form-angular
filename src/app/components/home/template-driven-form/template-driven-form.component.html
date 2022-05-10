@@ -2,28 +2,32 @@
   <form (ngSubmit)="onSubmit(formsignin)" #formsignin="ngForm">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Họ tên </label>
-      <input type="text" class="form-control" name="hoTen" [(ngModel)]="user.hoTen" required #hoTen = "ngModel">
+      <input type="text" class="form-control" name="hoTen" [(ngModel)]="user.hoTen" required #hoTen="ngModel">
       <div class="required"
         *ngIf="submitted && hoTen?.errors?.required ||  (hoTen?.touched && hoTen?.errors?.required)">required!</div>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Địa chỉ</label>
-      <input type="text" class="form-control" name="diaChi" [(ngModel)]="user.diaChi" required #diaChi = "ngModel">
-      <div class="required" *ngIf="submitted && diaChi?.errors?.required || (diaChi?.touched && diaChi?.errors?.required)">required!</div>
+      <input type="text" class="form-control" name="diaChi" [(ngModel)]="user.diaChi" required #diaChi="ngModel">
+      <div class="required"
+        *ngIf="submitted && diaChi?.errors?.required || (diaChi?.touched && diaChi?.errors?.required)">required!</div>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Số điện thoại</label>
-      <input type="number" class="form-control"  name="dienThoai" [(ngModel)]="user.dienThoai" required #dienThoai = "ngModel" >
+      <input type="number" class="form-control" name="dienThoai" [(ngModel)]="user.dienThoai" required
+        #dienThoai="ngModel">
       <div class="required"
-        *ngIf="submitted && dienThoai?.errors?.required || (dienThoai?.touched && dienThoai?.errors?.required)">required!
+        *ngIf="submitted && dienThoai?.errors?.required || (dienThoai?.touched && dienThoai?.errors?.required)">
+        required!
       </div>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Email</label>
-      <input type="text" class="form-control" ngModel name="email" [(ngModel)]="user.email" required email #email = "ngModel">
-      <div class="required" *ngIf="submitted && email?.errors?.required || (email?.touched && email?.errors?.required)">required!</div>
-      <div class="required"
-        *ngIf="submitted && email?.errors?.email || (email?.touched && email?.errors?.email)">Email!
+      <input type="text" class="form-control" ngModel name="email" [(ngModel)]="user.email" required email
+        #email="ngModel">
+      <div class="required" *ngIf="submitted && email?.errors?.required || (email?.touched && email?.errors?.required)">
+        required!</div>
+      <div class="required" *ngIf="submitted && email?.errors?.email || (email?.touched && email?.errors?.email)">Email!
       </div>
     </div>
     <div class="mb-3">
@@ -33,12 +37,10 @@
           <label for="exampleInputPassword1" class="form-label"> Sở thích</label>
           <div class="row">
             <div class="col-5">
-              <input type="text" class="form-control mt-3" placeholder="Thứ tự" name="thuTu"
-                [(ngModel)]="c[i].thuTu">
+              <input type="text" class="form-control mt-3" placeholder="Thứ tự" name="thuTu" [(ngModel)]="c[i].thuTu">
             </div>
             <div class="col-5">
-              <input type="text" class="form-control mt-3" placeholder="Tên" name="ten"
-                [(ngModel)]="c[i].ten">
+              <input type="text" class="form-control mt-3" placeholder="Tên" name="ten" [(ngModel)]="c[i].ten">
             </div>
             <div class="col-2">
               <button type="button" class="btn btn-primary mt-3" (click)="removeSoThich(i)"> Xoá</button>
@@ -50,13 +52,16 @@
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Công ty</label>
       <input type="text" class="form-control mt-3" placeholder="Tên công ty" name="tenCongty"
-        [(ngModel)]="user.congTy.tenCongTy" required #tenCongty = "ngModel">
+        [(ngModel)]="user.congTy.tenCongTy" required #tenCongty="ngModel">
       <div class="required"
-        *ngIf="submitted && tenCongty?.errors?.required || (tenCongty?.touched && tenCongty?.errors?.required)"> Required!
+        *ngIf="submitted && tenCongty?.errors?.required || (tenCongty?.touched && tenCongty?.errors?.required)">
+        Required!
       </div>
       <input type="text" class="form-control mt-3" placeholder="Địa chỉ công ty" name="diaChiCongTy"
-        [(ngModel)]="user.congTy.diaChiCongTy" required #diaChiCongTy = "ngModel">
-      <div class="required" *ngIf="submitted && diaChiCongTy?.errors?.required || (diaChiCongTy?.touched && diaChiCongTy?.errors?.required)"> Required!</div>
+        [(ngModel)]="user.congTy.diaChiCongTy" required #diaChiCongTy="ngModel">
+      <div class="required"
+        *ngIf="submitted && diaChiCongTy?.errors?.required || (diaChiCongTy?.touched && diaChiCongTy?.errors?.required)">
+        Required!</div>
     </div>
     <button type="submit" class="btn btn-primary">Lưu lại </button>
   </form>
