@@ -16,18 +16,19 @@ export class TemplateDrivenFormComponent implements OnInit {
     tenCongTy: '',
     diaChiCongTy: '',
   };
-  
+
   constructor() {}
 
   ngOnInit(): void {}
-  onSubmit(formsignin:any) {
-    console.log(formsignin.value)
-    console.log("data", this.user.soThich)
+
+  onSubmit() {
+    console.log(this.user);
   }
+
   addSoThich() {
     this.user.soThich.push({
-      thuTu: "",
-      ten: ""
+      thuTu: '',
+      ten: '',
     });
   }
 
