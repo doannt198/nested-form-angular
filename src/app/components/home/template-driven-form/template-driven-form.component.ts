@@ -7,21 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenFormComponent implements OnInit {
   data: any;
+  submitted = false;
   user: any = {
     hoTen: '',
     diaChi: '',
     dienThoai: '',
     email: '',
     soThich: [],
-    tenCongTy: '',
-    diaChiCongTy: '',
+    congTy:{
+      tenCongTy: '',
+      diaChiCongTy: '',
+    }
   };
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onSubmit() {
+  onSubmit(form: any) {
+    this.submitted = true;
+    if (form.invalid) {
+      return;
+    }
     console.log(this.user);
   }
 

@@ -39,8 +39,8 @@
       </div>
     </div>
     <div formArrayName="soThich"> 
-        <label for="exampleInputPassword1" class="form-label">Sở thích</label>
         <div *ngFor="let sothich of soThich.controls ; index as i" >
+          <label for="exampleInputPassword1" class="form-label">Sở thích {{i+1}}</label>
             <div [formGroupName]="i" *ngIf="soThich.controls.length">
                 <label for="exampleInputPassword1" class="form-label">Thứ tự</label>
                 <input type="text" class="form-control" formControlName="thuTu">
@@ -48,8 +48,8 @@
                 <input type="text" class="form-control " formControlName="ten">
                 <button type="button" class="btn btn-primary mt-3" (click)="removeSoThich(i)" *ngIf="soThich.controls.length > 1">Xoá</button>
                 <div formArrayName="skills">
-                    <label >skill</label>
                     <div *ngFor="let skill of skill(i).controls ; index as indexskill" >
+                      <label >skill{{indexskill+1}}</label>
                         <div [formGroupName]="indexskill" >
                             <label for="exampleInputPassword1" class="form-label" >skill</label>
                             <input type="text" class="form-control" formControlName="skill">
