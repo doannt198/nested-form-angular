@@ -25,12 +25,12 @@
     </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label"> Email</label>
-      <input type="text" class="form-control" formControlName="email">
+      <input type="email" class="form-control" formControlName="email">
       <div class="required"
         *ngIf="submitForm?.controls?.email?.errors?.required && submitForm?.controls?.email?.touched"> Required!
       </div>
       <div class="required" *ngIf="submitForm?.controls?.email?.errors?.email && submitForm?.controls?.email?.touched">
-        Email!
+        Nhập đúng định dạng gmail
       </div>
     </div>
     <div class="mb-3 flex justify-content-between">

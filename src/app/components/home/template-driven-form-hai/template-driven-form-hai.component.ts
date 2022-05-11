@@ -16,6 +16,7 @@ export class TemplateDrivenFormHaiComponent implements OnInit {
     diaChi: '',
     dienThoai: '',
     email: '',
+    ngaySinh: '',
     check: false,
     soThich: [],
     congTy: {
