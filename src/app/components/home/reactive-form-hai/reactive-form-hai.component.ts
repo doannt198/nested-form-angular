@@ -7,14 +7,17 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./reactive-form-hai.component.scss']
 })
 export class ReactiveFormHaiComponent implements OnInit {
-  submitForm: FormGroup
+ 
   constructor(private fb :FormBuilder) { }
-
+  showForm = false
+  submitForm: FormGroup
+  data:any = []
   ngOnInit(): void {
     this.submitForm =this.fb.group({
         hoTen: ['', [Validators.required]],
         diaChi: ['',[Validators.required]],
         dienThoai: [''],
+        date: '',
         email: ['',[Validators.required]],
         check: [false],
         soThich: this.fb.array([]),
@@ -33,6 +36,7 @@ export class ReactiveFormHaiComponent implements OnInit {
   get checkRequired() {
     return this.submitForm.get('check')
   }
+
   check() {
     console.log(this.checkRequired?.value)
     if(this.checkRequired?.value) {
@@ -45,8 +49,8 @@ export class ReactiveFormHaiComponent implements OnInit {
 
   soThichItem() {
     return this.fb.group({
-        tenCongTy: ['', [Validators.required]],
-        diaChi: ['', [Validators.required]]
+        thuTu: ['', [Validators.required]],
+        ten: ['', [Validators.required]]
     })
   }
 
@@ -59,7 +63,16 @@ export class ReactiveFormHaiComponent implements OnInit {
   }
 
   onSubmit(submitForm:any ) {
-    console.log( submitForm.value)
+    console.log(submitForm.value)
+    this.data.push(submitForm.value)
     this.submitForm.reset();
+  }
+
+  remove(i:number) {
+    this.data.splice(i,1)
+  }
+
+  adddoituong() {
+    this.showForm = !this.showForm
   }
 }
