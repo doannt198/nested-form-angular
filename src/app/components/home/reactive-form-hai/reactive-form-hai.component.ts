@@ -22,7 +22,8 @@ export class ReactiveFormHaiComponent implements OnInit {
           tenCongTy: ['', [Validators.required]],
           diaChi: ['', [Validators.required]]
         }),
-        gioiTinh: ['']
+        gioiTinh: [''],
+        loai: ['']
     })
   }
   get soThich():FormArray {

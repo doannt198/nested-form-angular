@@ -1,46 +1,123 @@
 <div class="wrapper">
-    <form (ngSubmit)="onSubmit(submitForm)" #submitForm="ngForm" >
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"> Họ tên</label>
-          <input type="text" class="form-control" name="hoTen" [(ngModel)]="user.hoTen" required #hoTen="ngModel">
-          <div *ngIf="submited && hoTen?.errors?.required || (hoTen?.errors?.required && hoTen?.touched)">
-            Trường này không được để trống
+  <form (ngSubmit)="onSubmit(submitForm)" #submitForm="ngForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"> Họ tên</label>
+      <input type="text" class="form-control" name="hoTen" [(ngModel)]="user.hoTen" required #hoTen="ngModel">
+      <div *ngIf="submited && hoTen?.errors?.required || (hoTen?.errors?.required && hoTen?.touched)">
+        Trường này không được để trống
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"> Địa chỉ</label>
+      <input type="text" class="form-control" name="diaChi" [(ngModel)]="user.diaChi" required #diaChi="ngModel">
+      <div *ngIf="submited && diaChi?.errors?.required || (diaChi?.errors?.required && diaChi?.touched)">
+        Trường này không được để trống
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"> Số điện thoại</label>
+      <input type="text" class="form-control" name="dienThoai" [(ngModel)]="user.dienThoai" required
+        required={{user.check}} #dienThoai="ngModel">
+      <div *ngIf="submited && dienThoai?.errors?.required || (dienThoai?.errors?.required && dienThoai?.touched)">
+        Trường này không được để trống
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" name="check" [(ngModel)]="user.check">
+      <label class="form-check-label" for="exampleCheck1">Required</label>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"> Email</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="user.email" required email #email="ngModel">
+      <div *ngIf="submited && email?.errors?.required || (email?.errors?.required && email?.touched)">
+        Trường này không được để trống
+      </div>
+      <div class="required" *ngIf="email?.errors?.email && email?.touched">
+        Email!
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-check-label" for="exampleCheck1"> Sở thích</label>
+      <button type="button" class="btn btn-primary float-end" (click)="addSoThich()"> Thêm</button>
+      <div *ngFor="let c of user.soThich; index as i">
+        <div class="row mt-4">
+          <div class="col-5">
+            <input type="text" class="form-control" placeholder="Thư tự" name="thuTu" [(ngModel)]="c.thuTu">
+          </div>
+          <div class="col-5 ">
+            <input type="text" class="form-control" placeholder="Tên" name="ten" [(ngModel)]="c.ten">
+          </div>
+          <div class="col-2">
+            <button type="submit" class="btn btn-primary" (click)="removesoThich(i)"> Xoá</button>
           </div>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"> Địa chỉ</label>
-          <input type="text" class="form-control" name="diaChi" [(ngModel)]="user.diaChi" >
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"> Số điện thoại</label>
-          <input type="text" class="form-control" name="dienThoai" [(ngModel)]="user.dienThoai">
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"> Email</label>
-          <input type="email" class="form-control" name="email" [(ngModel)]="user.email">
-        </div>
-        <div class="mb-3">
-          <label class="form-check-label" for="exampleCheck1"> Sở thích</label>
-          <button type="button" class="btn btn-primary float-end" (click)="addSoThich()"> Thêm</button>
-          <div *ngFor="let c of user.soThich; index as i">
-            <div class="row mt-4" *ngIf="user.soThich && user.soThich.length > 0">
-              <div class="col-5">
-                <input type="text" class="form-control" placeholder="Thư tự" name="thuTu" [(ngModel)]="c[i].thuTu">
-              </div>
-              <div class="col-5 ">
-                <input type="text" class="form-control" placeholder="Tên" name="ten" [(ngModel)]="c[i].ten">
-              </div>
-              <div class="col-2">
-                <button type="submit" class="btn btn-primary" (click)="removesoThich(i)"> Xoá</button>
-              </div>
-            </div>
+      </div>
+      <label class="form-check-label mt-3"> Công ty</label>
+      <input type="text" class="form-control mt-3" name="tenCongTy" [(ngModel)]="user.congTy.tenCongTy">
+      <input type="text" class="form-control mt-3" name="diaChiCongTy" [(ngModel)]="user.congTy.diaChiCongTy">
+      <div class="dropdown mt-3">
+        <select name="gioiTinh" [(ngModel)]="user.gioiTinh">
+          <option value=""> --Chọn giới tính--</option>
+          <option value="nam"> Nam</option>
+          <option value="nu"> Nữ</option>
+        </select>
+      </div>
+      <div class="radio-button mt-3">
+        <div class="flex">
+          <div class="form-check ">
+            <input class="form-check-input" type="radio" name="loai" value="Loại 1" [(ngModel)]="user.loai">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Loại 1
+            </label>
           </div>
-          <label class="form-check-label mt-3"> Công ty</label>
-          <input type="text" class="form-control mt-3" id="exampleInputPassword1">
-          <input type="text" class="form-control mt-3" id="exampleInputPassword1">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="loai" value="Loại 2" [(ngModel)]="user.loai">
+            <label class="form-check-label">
+              Loại 2
+            </label>
+          </div>
         </div>
-       <!--  <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-        <button type="submit" class="btn btn-primary"> Lưu</button>
-      </form>
+      </div>
+    </div>
+    <!--  <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+    <button type="submit" class="btn btn-primary"> Lưu</button>
+  </form>
 </div>
-
+<div class="table-wrapper">
+  <div class="table">
+    <table class="table">
+      <thead>
+        <tr  >
+          <th scope="col"> Thứ tự</th>
+          <th scope="col"> Họ tên</th>
+          <th scope="col"> Địa chỉ</th>
+          <th scope="col"> Số điện thoại</th>
+          <th scope="col"> Email</th>
+          <th scope="col"> Sở thích</th>
+          <th scope="col"> Công ty</th>
+          <th scope="col"> Địa chỉ công ty</th>
+          <th scope="col"> Giới tính</th>
+          <th scope="col"> Loại </th>
+          <th scope="col"> Chức năng </th>
+        </tr>
+      </thead>
+      <tbody  *ngFor="let item of data; index as i">
+        <tr>
+          <td>{{i+1}}</td>
+          <td>{{item?.hoTen}}</td>
+          <td>{{item?.diaChi}}</td>
+          <td>{{item?.dienThoai}}</td>
+          <td>{{item?.email}}</td>
+          <td *ngFor="let c of item.soThich">{{c?.ten}}</td>
+          <td>{{item?.congTy?.tenCongTy}}</td>
+          <td>{{item?.congTy?.diaChiCongTy}}</td>
+          <td>{{item?.gioiTinh}}</td>
+          <td>{{item?.loai}}</td>
+          <td>
+            <button type="submit" class="btn btn-primary" (click)="remove(i)"> Xoá</button>
+          </td>
+        </tr> 
+      </tbody>
+    </table>
+  </div>
+</div>
