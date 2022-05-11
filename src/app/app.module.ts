@@ -20,6 +20,7 @@ import { ReactiveFormComponent } from './components/home/reactive-form/reactive-
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
 import { TemplateDrivenFormHaiComponent } from './components/home/template-driven-form-hai/template-driven-form-hai.component';
 import { ReactiveFormHaiComponent } from './components/home/reactive-form-hai/reactive-form-hai.component';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ReactiveFormHaiComponent } from './components/home/reactive-form-hai/re
     ReactiveFormsModule,
     DialogModule,
     ButtonModule,
-    SwiperModule
+    SwiperModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import * as moment from 'moment'; 
 @Component({
   selector: 'app-reactive-form-hai',
   templateUrl: './reactive-form-hai.component.html',
@@ -17,8 +17,8 @@ export class ReactiveFormHaiComponent implements OnInit {
         hoTen: ['', [Validators.required]],
         diaChi: ['',[Validators.required]],
         dienThoai: [''],
-        date: '',
-        email: ['',[Validators.required]],
+        ngaySinh: "",
+        email: ['',[Validators.required, Validators.email]],
         check: [false],
         soThich: this.fb.array([]),
         congTy:this.fb.group({
@@ -38,7 +38,6 @@ export class ReactiveFormHaiComponent implements OnInit {
   }
 
   check() {
-    console.log(this.checkRequired?.value)
     if(this.checkRequired?.value) {
         this.submitForm.controls.dienThoai.setValidators([Validators.required])
     }else {
@@ -66,6 +65,9 @@ export class ReactiveFormHaiComponent implements OnInit {
     console.log(submitForm.value)
     this.data.push(submitForm.value)
     this.submitForm.reset();
+    this.showForm=false;
+    const date = moment(this.submitForm.value.date).format('DD-MM-YYYY');
+    console.log("date", date)
   }
 
   remove(i:number) {
@@ -75,4 +77,6 @@ export class ReactiveFormHaiComponent implements OnInit {
   adddoituong() {
     this.showForm = !this.showForm
   }
+
+
 }
