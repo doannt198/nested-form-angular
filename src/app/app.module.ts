@@ -21,6 +21,8 @@ import { TemplateDrivenFormComponent } from './components/home/template-driven-f
 import { TemplateDrivenFormHaiComponent } from './components/home/template-driven-form-hai/template-driven-form-hai.component';
 import { ReactiveFormHaiComponent } from './components/home/reactive-form-hai/reactive-form-hai.component';
 import { CalendarModule } from 'primeng/calendar';
+import { ArrayComponent } from './components/home/array/array.component';
+import { ObjectComponent } from './components/home/object/object.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { CalendarModule } from 'primeng/calendar';
     TemplateDrivenFormComponent,
     TemplateDrivenFormHaiComponent,
     ReactiveFormHaiComponent,
+    ArrayComponent,
+    ObjectComponent,
     
   ],
   imports: [

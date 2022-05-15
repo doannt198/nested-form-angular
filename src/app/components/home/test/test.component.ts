@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Test1Component } from '../test1/test1.component';
 
 
@@ -8,13 +8,9 @@ import { Test1Component } from '../test1/test1.component';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
-@ViewChild(Test1Component)
- test1:Test1Component
+  value=0
   constructor() { }
 
   ngOnInit(): void {
-  }
-  onUp(){
-    this.test1.value++;
   }
 }

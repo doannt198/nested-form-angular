@@ -90,4 +90,6 @@ export class ReactiveFormComponent implements OnInit {
     this.data = formTest.value;
     console.log(formTest.value);
   }
+
+  
 }

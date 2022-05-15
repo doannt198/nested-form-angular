@@ -32,9 +32,13 @@ export class ReactiveFormHaiComponent implements OnInit {
   get soThich():FormArray {
     return this.submitForm.get('soThich') as FormArray
   }
-   
+  
   get checkRequired() {
     return this.submitForm.get('check')
+  }
+
+   gethoTen() {
+    return this.submitForm.get('hoTen')
   }
 
   check() {
@@ -65,7 +69,6 @@ export class ReactiveFormHaiComponent implements OnInit {
     console.log(submitForm.value)
     this.data.push(submitForm.value)
     this.submitForm.reset();
-    this.showForm=false;
     const date = moment(this.submitForm.value.date).format('DD-MM-YYYY');
     console.log("date", date)
   }
@@ -78,5 +81,8 @@ export class ReactiveFormHaiComponent implements OnInit {
     this.showForm = !this.showForm
   }
 
-
+  editSoThich(i: number) {
+    this.submitForm =this.data[i]
+   this.gethoTen=this.data[i].hoTen
+  }
 }

@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { filter, from, Observable } from 'rxjs';
+import { TestComponent } from '../test/test.component';
 
 
 @Component({
@@ -8,12 +9,14 @@ import { filter, from, Observable } from 'rxjs';
   styleUrls: ['./test1.component.scss']
 })
 export class Test1Component implements OnInit {
-  value=0
-  constructor() {  
-    
-   }
-
+  constructor() {   
+  }
+  @ViewChild(TestComponent)
+   view:TestComponent
   ngOnInit(): void {
-    
+  }
+
+  onclick() {
+    this.view.value++
   }
 }
