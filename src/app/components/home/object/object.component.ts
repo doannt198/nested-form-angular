@@ -9,7 +9,9 @@ import { ArrayComponent } from '../array/array.component';
 export class ObjectComponent implements OnInit {
 
   constructor() { }
-  giatri=0
+  giatri={ name:"Đ", age:19}
+   
+ 
   ngOnInit(): void {
   }
 
