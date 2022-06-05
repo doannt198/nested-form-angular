@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ArrayComponent } from '../array/array.component';
 
 @Component({
   selector: 'app-object',
