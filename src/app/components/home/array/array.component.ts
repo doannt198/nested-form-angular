@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-array',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./array.component.scss']
 })
 export class ArrayComponent implements OnInit {
-
+  @Input() check : any
+  @Output() toggle:EventEmitter<any> = new EventEmitter();
   constructor() { }
-
+  text: string
+  results:any[] = []
+  action = {
+    name:"",
+    age: 0,
+    check: false
+  }
   ngOnInit(): void {
+    
   }
 
+  hdtoggle() {
+    this.toggle.emit();
+  }
 }

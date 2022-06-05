@@ -23,7 +23,7 @@ import { ReactiveFormHaiComponent } from './components/home/reactive-form-hai/re
 import { CalendarModule } from 'primeng/calendar';
 import { ArrayComponent } from './components/home/array/array.component';
 import { ObjectComponent } from './components/home/object/object.component';
-
+import { AutoCompleteModule } from 'primeng/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +52,8 @@ import { ObjectComponent } from './components/home/object/object.component';
     DialogModule,
     ButtonModule,
     SwiperModule,
-    CalendarModule
+    CalendarModule,
+    AutoCompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent],
