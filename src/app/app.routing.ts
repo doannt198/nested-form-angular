@@ -25,6 +25,10 @@ const appRoutes: Routes = [
    component:HomeDetailComponent
   },
   { 
+    path:'them-san-pham',
+   component:HomeAddComponent
+  },
+  { 
     path:'home-edit/:id',
    component:HomeEditComponent
   },

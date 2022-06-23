@@ -1,4 +1,64 @@
-<form (submit)="onSubmit(submitform)" #submitform="ngForm">
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <form (submit)="onSubmit(submitform)" #submitform="ngForm">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="name" name="name"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Des</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="description"
+                        name="description">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Url</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="url"
+                        name="url">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-8">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name </th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Url</th>
+                      </tr>
+                </thead>
+                <tbody *ngFor="let item of listProduct">
+                    <tr>
+                        <th scope="row"></th>
+                        <td>{{item?.name}}</td>
+                        <td>{{item?.description}}</td>
+                        <td> <img [src]="item?.url" [alt]="item?.img" style="width:200px; height:200px"></td>
+                      </tr>
+                </tbody>
+              </table>
+            <h1>List</h1>
+            <div *ngFor="let item of listProduct" style="width:600px">
+                <div class="product-name">{{item?.name}}</div>
+                <div class="product-description">{{item?.description}}</div>
+                <div class="product-url">
+                   
+                </div>
+                <button (click)="toFormDetail(item.id)">Xem chi tiết</button> <br>
+                <button (click)="onDelete(item.id)">Xoá </button>
+                <button (click)="showDialogEdit(item)">Sửa</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<p-dialog header="Edit" [(visible)]="displayEdit" [style]="{width: '50vw'}" [closeOnEscape]="true">
+    <!--  <form (submit)="onSubmit(submitform)" #submitform="ngForm">
     <div>Name</div> 
     <input type="text" [(ngModel)]="name" name="name">
     <div>Des</div>
@@ -6,32 +66,5 @@
     <div>Url</div>
     <input type="text" [(ngModel)]="url" name="url"> <br>
     <button type="submit">Save</button>
-</form>
-
-<h1>List</h1>
-<div *ngFor="let item of listProduct" style="width:600px"> 
-<div class="product-name">{{item?.name}}</div>
-<div class="product-description">{{item?.description}}</div>
-<div class="product-url">
-    <img [src]="item?.url" [alt]="item?.img" style="width:200px; height:200px">
-</div>
-<button (click)="toFormDetail(item.id)">Xem chi tiết</button> <br>
-<button (click)="onDelete(item.id)" >Xoá </button> 
-<button (click)="showDialogEdit(item)">Sửa</button>
-
-</div>
-<p-dialog header="Edit" 
-[(visible)]="displayEdit"
- [style]="{width: '50vw'}"
- [closeOnEscape]="true"
- >
- <form (submit)="onSubmit(submitform)" #submitform="ngForm">
-    <div>Name</div> 
-    <input type="text" [(ngModel)]="name" name="name">
-    <div>Des</div>
-    <input type="text" [(ngModel)]="description" name="description">
-    <div>Url</div>
-    <input type="text" [(ngModel)]="url" name="url"> <br>
-    <button type="submit">Save</button>
-</form>
+</form> -->
 </p-dialog>

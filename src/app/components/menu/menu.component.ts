@@ -12,8 +12,7 @@ export class MenuComponent implements OnInit {
   visibleSidebar1: any;
   items: MenuItem[];
   ngOnInit(): void {
-    this.items = [
-      
+    this.items = [ 
       {
         label: 'Reactive Form',
         icon: 'pi pi-cog',
@@ -33,6 +32,11 @@ export class MenuComponent implements OnInit {
         label: 'Reactive Form Hai',
         icon: 'pi pi-calendar-minus',
         routerLink: '/reactive-form-hai',
+      },
+      {
+        label: 'Form Thêm sản phẩm',
+        icon: 'pi pi-bell',
+        routerLink: '/them-san-pham',
       },
       {
         label: 'Object',
