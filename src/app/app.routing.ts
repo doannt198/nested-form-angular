@@ -10,8 +10,6 @@ import { ReactiveFormHaiComponent } from './components/home/reactive-form-hai/re
 import { ReactiveFormComponent } from './components/home/reactive-form/reactive-form.component';
 import { TemplateDrivenFormHaiComponent } from './components/home/template-driven-form-hai/template-driven-form-hai.component';
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
-import { TestComponent } from './components/home/test/test.component';
-import { Test1Component } from './components/home/test1/test1.component';
 import { MenuComponent } from './components/menu/menu.component';
 
 
@@ -29,14 +27,6 @@ const appRoutes: Routes = [
   { 
     path:'home-edit/:id',
    component:HomeEditComponent
-  },
-  { 
-    path:'test',
-   component:TestComponent
-  },
-  { 
-    path:'test1',
-   component:Test1Component
   },
   { 
     path:'reactive-form',
