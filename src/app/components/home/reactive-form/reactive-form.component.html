@@ -1,4 +1,3 @@
-
 <form [formGroup]="formTest" (ngSubmit)="onSubmit(formTest)">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label required">Họ tên</label>
@@ -41,8 +40,9 @@
       Trường này không được để trống
     </div>
     <div class="validator mt-2" *ngIf="formTest?.controls?.email?.errors?.email && formTest?.controls?.email?.touched">
-      Sai định dạng Email
+      Sai định dạng Email, Nhập đúng định dạng @gmail.com
     </div>
+
   </div>
   <div formArrayName="soThich">
     <div *ngFor="let sothich of soThich.controls ; index as i">
