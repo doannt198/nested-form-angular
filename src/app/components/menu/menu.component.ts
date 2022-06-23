@@ -49,6 +49,7 @@ export class MenuComponent implements OnInit {
       },
     ];
   }
+  
   onShowEvent() {
       this.visibleSidebar1 =false
   }
