@@ -24,6 +24,8 @@ import { CalendarModule } from 'primeng/calendar';
 import { ArrayComponent } from './components/home/array/array.component';
 import { ObjectComponent } from './components/home/object/object.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { SidebarModule } from 'primeng/sidebar';
+import { MenuComponent } from './components/menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     ReactiveFormHaiComponent,
     ArrayComponent,
     ObjectComponent,
+    MenuComponent,
     
   ],
   imports: [
@@ -53,7 +56,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     ButtonModule,
     SwiperModule,
     CalendarModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
