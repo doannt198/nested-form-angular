@@ -44,3 +44,10 @@ export class TemplateDrivenFormComponent implements OnInit {
     this.user.soThich.splice(i, 1);
   }
 }
+
+/* function gmailValidator( user:any) {
+  if (user.email.includes('@gmail.com')) {
+    return null
+  }
+  return {gmail: true}
+} */
