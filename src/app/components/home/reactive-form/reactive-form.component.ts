@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -24,7 +24,7 @@ export class ReactiveFormComponent implements OnInit {
         ],
       ],
       check: [false],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email, gmailValidator]],
       soThich: this.fb.array([]),
       congTy: this.fb.group({
         tenCongTy: ['', [Validators.required]],
@@ -91,5 +91,10 @@ export class ReactiveFormComponent implements OnInit {
     console.log(formTest.value);
   }
 
-  
+}
+function gmailValidator(formControl: FormControl) {
+  if (formControl.value.includes('@gmail.com')) {
+    return null
+  }
+  return {gmail: true}
 }
