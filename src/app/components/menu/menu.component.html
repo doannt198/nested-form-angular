@@ -3,5 +3,5 @@
 </div>
 <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000" onHide="onHandleHide($event)">
     <h3>Menu</h3>
-    <p-menu [model]="items"></p-menu>
+    <p-menu [model]="items" (click)="onShowEvent()"></p-menu>
 </p-sidebar>

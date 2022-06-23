@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
@@ -48,7 +49,7 @@ export class MenuComponent implements OnInit {
       },
     ];
   }
-  onHandleHide (event: any) {
-      console.log(event )
+  onShowEvent() {
+      this.visibleSidebar1 =false
   }
 }
