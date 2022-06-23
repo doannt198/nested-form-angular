@@ -12,45 +12,38 @@ export class MenuComponent implements OnInit {
   items: MenuItem[];
   ngOnInit(): void {
     this.items = [
-      {
-        label: 'Detail',
-        icon: 'pi pi-fw pi-download',
-        routerLink: '/detail/1',
-      },
-      {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-refresh',
-        routerLink: '/edit/1',
-      },
-      { label: 'Test', icon: 'pi pi-fw pi-refresh', routerLink: '/test' },
+      
+      { label: 'Test',
+        icon: 'pi pi-box',
+        routerLink: '/test' },
       {
         label: 'test1',
-        icon: 'pi pi-fw pi-refresh',
+        icon: 'pi pi-chevron-circle-down',
         routerLink: '/test1',
       },
       {
         label: 'Reactive Form',
-        icon: 'pi pi-fw pi-refresh',
+        icon: 'pi pi-cog',
         routerLink: '/reactive-form',
       },
       {
         label: 'Template Drien Form',
-        icon: 'pi pi-fw pi-refresh',
+        icon: 'pi pi-car',
         routerLink: '/template-driven-form',
       },
       {
         label: 'Template Drien Form Hai',
-        icon: 'pi pi-fw pi-refresh',
+        icon: 'pi pi-chart-bar',
         routerLink: '/tempalte-driven-form-hai',
       },
       {
         label: 'Reactive Form Hai',
-        icon: 'pi pi-fw pi-refresh',
+        icon: 'pi pi-calendar-minus',
         routerLink: '/reactive-form-hai',
       },
       {
         label: 'Object',
-        icon: 'pi pi-fw pi-refresh',
+        icon: 'pi pi-bell',
         routerLink: '/object',
       },
     ];
