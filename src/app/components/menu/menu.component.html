@@ -1,8 +1,7 @@
 <div class="menu-button">
     <p-button type="button" class="mr-2"  label="Menu"(click)="visibleSidebar1 = true" ></p-button>
 </div>
-<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000" onHide="onHandleHide($event)">
     <h3>Menu</h3>
     <p-menu [model]="items"></p-menu>
 </p-sidebar>
-<router-outlet></router-outlet>

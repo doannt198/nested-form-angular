@@ -12,7 +12,6 @@ export class MenuComponent implements OnInit {
   items: MenuItem[];
   ngOnInit(): void {
     this.items = [
-      { label: 'Add', icon: 'pi pi-fw pi-plus', routerLink: '/add' },
       {
         label: 'Detail',
         icon: 'pi pi-fw pi-download',
@@ -55,5 +54,8 @@ export class MenuComponent implements OnInit {
         routerLink: '/object',
       },
     ];
+  }
+  onHandleHide (event: any) {
+      console.log(event )
   }
 }
