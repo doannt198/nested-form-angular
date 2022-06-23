@@ -26,6 +26,7 @@ import { ObjectComponent } from './components/home/object/object.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenuComponent } from './components/menu/menu.component';
+import { MenuModule } from 'primeng/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { MenuComponent } from './components/menu/menu.component';
     SwiperModule,
     CalendarModule,
     AutoCompleteModule,
-    SidebarModule
+    SidebarModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

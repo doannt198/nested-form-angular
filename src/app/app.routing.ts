@@ -12,14 +12,17 @@ import { TemplateDrivenFormHaiComponent } from './components/home/template-drive
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
 import { TestComponent } from './components/home/test/test.component';
 import { Test1Component } from './components/home/test1/test1.component';
+import { MenuComponent } from './components/menu/menu.component';
+
 
 const appRoutes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '', pathMatch: 'full', redirectTo:'menu' },
+  { path: 'menu', component: MenuComponent },
   {
     path: 'home',
     component: HomeComponent,
     children: [
-      {
+     /*  {
         path:'' ,
         loadChildren: ()=>import('../app/pages/home/home.module').then(m=>m.HomeModule)
       },
@@ -29,7 +32,7 @@ const appRoutes: Routes = [
       },
       { path:'home-add',
        component:HomeAddComponent
-      },
+      }, */
       { 
         path:'home-detail/:id',
        component:HomeDetailComponent
