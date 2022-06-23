@@ -14,8 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { SwiperModule } from 'swiper/angular';
-import { TestComponent } from './components/home/test/test.component';
-import { Test1Component } from './components/home/test1/test1.component';
 import { ReactiveFormComponent } from './components/home/reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
 import { TemplateDrivenFormHaiComponent } from './components/home/template-driven-form-hai/template-driven-form-hai.component';
@@ -34,8 +32,6 @@ import { MenuModule } from 'primeng/menu';
     HomeDetailComponent,
     HomeAddComponent,
     HomeEditComponent,
-    TestComponent,
-    Test1Component,
     ReactiveFormComponent,
     TemplateDrivenFormComponent,
     TemplateDrivenFormHaiComponent,
