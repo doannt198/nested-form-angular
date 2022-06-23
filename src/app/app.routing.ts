@@ -20,60 +20,47 @@ const appRoutes: Routes = [
   { path: 'menu', component: MenuComponent },
   {
     path: 'home',
-    component: HomeComponent,
-    children: [
-     /*  {
-        path:'' ,
-        loadChildren: ()=>import('../app/pages/home/home.module').then(m=>m.HomeModule)
-      },
-      {
-        path: 'trang-chu',
-        loadChildren: ()=> import('../app/pages/trang-chu/trang-chu.module').then(m=>m.TrangChuModule)
-      },
-      { path:'home-add',
-       component:HomeAddComponent
-      }, */
-      { 
-        path:'home-detail/:id',
-       component:HomeDetailComponent
-      },
-      { 
-        path:'home-edit/:id',
-       component:HomeEditComponent
-      },
-      { 
-        path:'test',
-       component:TestComponent
-      },
-      { 
-        path:'test1',
-       component:Test1Component
-      },
-      { 
-        path:'reactive-form',
-       component: ReactiveFormComponent
-      },
-      { 
-        path:'template-driven-form',
-       component: TemplateDrivenFormComponent
-      },
-      { 
-        path:'reactive-form-hai',
-       component: ReactiveFormHaiComponent
-      },
-      { 
-        path:'tempalte-driven-form-hai',
-       component: TemplateDrivenFormHaiComponent
-      },
-      { 
-        path:'array',
-       component: ArrayComponent
-      },
-      { 
-        path:'object',
-       component: ObjectComponent
-      },
-    ],
+    component: HomeComponent
+  },
+  { 
+    path:'home-detail/:id',
+   component:HomeDetailComponent
+  },
+  { 
+    path:'home-edit/:id',
+   component:HomeEditComponent
+  },
+  { 
+    path:'test',
+   component:TestComponent
+  },
+  { 
+    path:'test1',
+   component:Test1Component
+  },
+  { 
+    path:'reactive-form',
+   component: ReactiveFormComponent
+  },
+  { 
+    path:'template-driven-form',
+   component: TemplateDrivenFormComponent
+  },
+  { 
+    path:'reactive-form-hai',
+   component: ReactiveFormHaiComponent
+  },
+  { 
+    path:'tempalte-driven-form-hai',
+   component: TemplateDrivenFormHaiComponent
+  },
+  { 
+    path:'array',
+   component: ArrayComponent
+  },
+  { 
+    path:'object',
+   component: ObjectComponent
   },
 ];
 @NgModule({
