@@ -103,5 +103,6 @@ export class HomeAddComponent implements OnInit {
 
   cancel() {
     this.displayEdit = false;
+    this.getListProduct();
   }
 }

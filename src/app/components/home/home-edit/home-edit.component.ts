@@ -78,6 +78,9 @@ export class HomeEditComponent implements OnInit {
     }
     this.callbackCancel.emit()
     console.log("Edit", dataEdit)
+    this.apiService.editProduct(dataEdit).subscribe((data) => {
+      console.log(data)
+    })
   }
 }
 

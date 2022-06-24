@@ -20,7 +20,10 @@
             </form>
         </div>
         <div class="col-8">
-            <table class="table">
+            <table class="table" >
+                <div class="cuon">
+                    
+                </div>
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">STT</th>
@@ -63,6 +66,7 @@
     <app-home-detail *ngIf="showDetail" [detail]="dataDetail"></app-home-detail>
 </p-dialog>
 
-<p-dialog header="Chỉnh sửa thông tin sản phẩm" [(visible)]="displayEdit" [modal]="true" [style]="{width: '50vw'}" [closeOnEscape]="true">
+<p-dialog header="Chỉnh sửa thông tin sản phẩm" [(visible)]="displayEdit" [modal]="true" [style]="{width: '50vw'}"
+    [closeOnEscape]="true">
     <app-home-edit *ngIf="displayEdit" [detail]="dataDetail" (callbackCancel)="cancel()"></app-home-edit>
-</p-dialog >
+</p-dialog>
