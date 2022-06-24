@@ -26,6 +26,9 @@ import { SidebarModule } from 'primeng/sidebar';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuModule } from 'primeng/menu';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ConfirmationService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,6 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     ArrayComponent,
     ObjectComponent,
     MenuComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -57,9 +59,11 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     AutoCompleteModule,
     SidebarModule,
     MenuModule,
-    EditorModule
+    EditorModule,
+    ConfirmPopupModule,
+    ConfirmDialogModule
   ],
-  providers: [],
+  providers: [ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

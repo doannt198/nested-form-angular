@@ -14,7 +14,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Url</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="url" name="url">
+                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="url" name="url">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -40,13 +40,13 @@
                             <div class="flex">
                                 <button pButton pRipple type="button" icon="pi pi-prime"
                                     class="p-button-rounded p-button-info mr-2" style="width:30px ;height: 30px;"
-                                    (click)="toFormDetail(item.id)"></button>
+                                    (click)="handleShowDetail(item)"></button>
                                 <button pButton pRipple type="button" icon="pi pi-pencil"
                                     style="width:30px ;height: 30px;" class="p-button-rounded p-button-success mr-2"
                                     (click)="showDialogEdit(item)"></button>
                                 <button pButton pRipple type="button" icon="pi pi-trash"
                                     style="width:30px ;height: 30px;" class="p-button-rounded p-button-danger mr-2"
-                                    (click)="onDelete(item.id)"></button>
+                                    (click)="onDelete(item)"></button>
                             </div>
                         </td>
                     </tr>
@@ -56,7 +56,11 @@
     </div>
 </div>
 
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 
+<p-dialog header="Thông tin chi tiết sản phẩm" [(visible)]="showDetail" [modal]="true" [style]="{width: '50vw'}" [closeOnEscape]="true">
+    <app-home-detail *ngIf="showDetail" [detail]="dataDetail"></app-home-detail>
+</p-dialog>
 
 <p-dialog header="Edit" [(visible)]="displayEdit" [modal]="true" [style]="{width: '50vw'}" [closeOnEscape]="true">
     <!--  <form (submit)="onSubmit(submitform)" #submitform="ngForm">

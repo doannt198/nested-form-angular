@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { DialogModule } from 'primeng/dialog';
 import { PrimeNGConfig } from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
 @Component({
   selector: 'app-home-add',
   templateUrl: './home-add.component.html',
@@ -23,10 +24,13 @@ export class HomeAddComponent implements OnInit {
     { name: 'A', age: 18, status: true },
   ];
   user1 = [];
+  showDetail: boolean = false
+  dataDetail: any;
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private primengConfig: PrimeNGConfig
+    private primengConfig: PrimeNGConfig,
+    private confirmationService: ConfirmationService
   ) {}
 
   ngOnInit(): void {
@@ -62,14 +66,26 @@ export class HomeAddComponent implements OnInit {
     }
   }
 
-  onDelete(id: number) {
-    this.apiService.deleteProduct(id).subscribe((_) => {
-      this.getListProduct();
-    });
+  onDelete(item: any) {
+    this.confirmationService.confirm({
+      message: `Bạn chắc chắn muốn xoá <b>${item.name}</b>`,
+      icon: "pi pi-exclamation-triangle",
+      accept: () => {
+        this.apiService.deleteProduct(item.id).subscribe((_) => {
+
+          this.getListProduct();
+        });
+      }
+    })
   }
 
-  toFormDetail(id: number) {
-    this.router.navigateByUrl(`/home/home-detail/${id}`);
+  handleShowDetail(item: any) {
+    this.showDetail = true
+    this.apiService.getDetail(item.id)
+    .subscribe((response)=>{
+        console.log("chi tiết sản phẩm", response)
+        this.dataDetail = response
+    })
   }
 
   showDialogEdit(item: any) {
