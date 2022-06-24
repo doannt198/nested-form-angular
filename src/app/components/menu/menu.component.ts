@@ -39,7 +39,7 @@ export class MenuComponent implements OnInit {
         routerLink: '/them-san-pham',
       },
       {
-        label: 'Object',
+        label: 'Thư viện',
         icon: 'pi pi-bell',
         routerLink: '/object',
       },
