@@ -9,13 +9,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Des</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="description"
+                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="description"
                         name="description">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Url</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="url"
-                        name="url">
+                    <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="url" name="url">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -28,7 +27,8 @@
                         <th scope="col">Name </th>
                         <th scope="col">Description</th>
                         <th scope="col">Url</th>
-                      </tr>
+                        <th scope="col">Thao tác</th>
+                    </tr>
                 </thead>
                 <tbody *ngFor="let item of listProduct">
                     <tr>
@@ -36,28 +36,29 @@
                         <td>{{item?.name}}</td>
                         <td>{{item?.description}}</td>
                         <td> <img [src]="item?.url" [alt]="item?.img" style="width:200px; height:200px"></td>
-                      </tr>
+                        <td>
+                            <div class="flex">
+                                <button pButton pRipple type="button" icon="pi pi-prime"
+                                    class="p-button-rounded p-button-info mr-2" style="width:30px ;height: 30px;"
+                                    (click)="toFormDetail(item.id)"></button>
+                                <button pButton pRipple type="button" icon="pi pi-pencil"
+                                    style="width:30px ;height: 30px;" class="p-button-rounded p-button-success mr-2"
+                                    (click)="showDialogEdit(item)"></button>
+                                <button pButton pRipple type="button" icon="pi pi-trash"
+                                    style="width:30px ;height: 30px;" class="p-button-rounded p-button-danger mr-2"
+                                    (click)="onDelete(item.id)"></button>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
-              </table>
-            <h1>List</h1>
-            <div *ngFor="let item of listProduct" style="width:600px">
-                <div class="product-name">{{item?.name}}</div>
-                <div class="product-description">{{item?.description}}</div>
-                <div class="product-url">
-                   
-                </div>
-                <button (click)="toFormDetail(item.id)">Xem chi tiết</button> <br>
-                <button (click)="onDelete(item.id)">Xoá </button>
-                <button (click)="showDialogEdit(item)">Sửa</button>
-
-            </div>
+            </table>
         </div>
     </div>
 </div>
 
 
 
-<p-dialog header="Edit" [(visible)]="displayEdit" [style]="{width: '50vw'}" [closeOnEscape]="true">
+<p-dialog header="Edit" [(visible)]="displayEdit" [modal]="true" [style]="{width: '50vw'}" [closeOnEscape]="true">
     <!--  <form (submit)="onSubmit(submitform)" #submitform="ngForm">
     <div>Name</div> 
     <input type="text" [(ngModel)]="name" name="name">
