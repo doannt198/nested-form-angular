@@ -25,6 +25,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuModule } from 'primeng/menu';
+import { EditorModule } from '@tinymce/tinymce-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { MenuModule } from 'primeng/menu';
     CalendarModule,
     AutoCompleteModule,
     SidebarModule,
-    MenuModule
+    MenuModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent],
