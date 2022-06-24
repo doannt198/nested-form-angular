@@ -23,16 +23,16 @@
             <table class="table">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">STT</th>
                         <th scope="col">Name </th>
                         <th scope="col">Description</th>
                         <th scope="col">Url</th>
                         <th scope="col">Thao tác</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let item of listProduct">
+                <tbody *ngFor="let item of listProduct; index as i">
                     <tr>
-                        <th scope="row"></th>
+                        <td>{{i+1}}</td>
                         <td>{{item?.name}}</td>
                         <td>{{item?.description}}</td>
                         <td> <img [src]="item?.url" [alt]="item?.img" style="width:200px; height:200px"></td>
