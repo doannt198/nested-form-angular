@@ -25,6 +25,7 @@ export class HomeAddComponent implements OnInit {
   ];
   user1 = [];
   showDetail: boolean = false
+  showEdit: boolean = false
   dataDetail: any;
   constructor(
     private apiService: ApiService,
