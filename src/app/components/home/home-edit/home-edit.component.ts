@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
@@ -11,12 +11,15 @@ import { filter, map } from 'rxjs';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeEditComponent implements OnInit {
+  @Input() detail:any 
+  @Output() callbackCancel = new EventEmitter<any>()
   name: string
   password: string
   data=[]
   submited = false
  form:FormGroup
  product: any = {
+    id: 0, 
     name: '',
     description: '',
     url: ''
@@ -27,6 +30,7 @@ export class HomeEditComponent implements OnInit {
     private routerlink: Router,
     private fb: FormBuilder
   ) {
+   
     /* this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       pass: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
@@ -45,6 +49,13 @@ export class HomeEditComponent implements OnInit {
     this.searchControl.valueChanges.subscribe(value =>
         console.log(value)
    ) */
+   this.product.name = this.detail?.name
+   this.product.description = this.detail?.description
+   this.product.url = this.detail?.url
+  }
+
+  ngOnchanges() {
+   
   }
   /* onSubmit(save:any) {
      console.log(save.value)
@@ -62,7 +73,11 @@ export class HomeEditComponent implements OnInit {
     })
   } */
   onSubmit() {
-
+    const dataEdit = {
+        ...this.product, id: this.detail.id
+    }
+    this.callbackCancel.emit()
+    console.log("Edit", dataEdit)
   }
 }
 

@@ -94,5 +94,14 @@ export class HomeAddComponent implements OnInit {
 
   showDialogEdit(item: any) {
     this.displayEdit = true;
+    this.apiService.getDetail(item.id)
+    .subscribe((response)=>{
+        console.log("chi tiết sản phẩm", response)
+        this.dataDetail = response
+    })
+  }
+
+  cancel() {
+    this.displayEdit = false;
   }
 }
