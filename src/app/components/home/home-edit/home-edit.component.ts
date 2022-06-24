@@ -16,13 +16,18 @@ export class HomeEditComponent implements OnInit {
   data=[]
   submited = false
  form:FormGroup
+ product: any = {
+    name: '',
+    description: '',
+    url: ''
+ }
   constructor(
     private router: ActivatedRoute,
     private apiService: ApiService,
     private routerlink: Router,
     private fb: FormBuilder
   ) {
-    this.form = this.fb.group({
+    /* this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       pass: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
       repass: ['', [Validators.required]],
@@ -32,16 +37,16 @@ export class HomeEditComponent implements OnInit {
         nametest: ['', [Validators.required]],
         passtest: ['', [Validators.required]],
       }),
-    });
+    }); */
   }
-  searchControl = new FormControl()
+ /*  searchControl = new FormControl() */
   ngOnInit(): void {
-    this.getProduct()
+   /*  this.getProduct()
     this.searchControl.valueChanges.subscribe(value =>
         console.log(value)
-   )
+   ) */
   }
-  onSubmit(save:any) {
+  /* onSubmit(save:any) {
      console.log(save.value)
   }
   getProduct(){
@@ -55,5 +60,9 @@ export class HomeEditComponent implements OnInit {
         console.log( err )
       }
     })
+  } */
+  onSubmit() {
+
   }
 }
+

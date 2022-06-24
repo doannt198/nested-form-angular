@@ -76,7 +76,6 @@ export class HomeAddComponent implements OnInit {
       icon: "pi pi-exclamation-triangle",
       accept: () => {
         this.apiService.deleteProduct(item.id).subscribe((_) => {
-
           this.getListProduct();
         });
       }

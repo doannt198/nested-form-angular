@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+<!-- <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
     <label> Name</label>
     <input type="text" formControlName="name" >
     <div class="required" *ngIf="form.controls.name.errors?.required && form.controls.name.touched">required</div>
@@ -8,7 +8,7 @@
     <div class="required" *ngIf="form.controls.pass.errors?.required && form.controls.pass.touched">required</div>
     <div class="required" *ngIf="form.controls.pass.errors?.minlength "> Mật khẩu tối thiểu 6 ký tự</div>
     <div class="required" *ngIf="form.controls.pass.errors?.maxlength "> Mật khẩu tối đa 40 ký tự</div>
-  <!--   Xác thực password có hợp lệ hay không -->
+    Xác thực password có hợp lệ hay không 
     <label> Confirm Pass</label>
     <input type="password" formControlName="repass"> <br>
     <div class="required" *ngIf="form.controls.repass.errors?.matching"> Mật khẩu không khớp</div>
@@ -33,4 +33,21 @@
     <div class="list-name"></div>
     <div class="list-description"></div>
     <img src="{{item}}" alt="product" style="width:200px">
-</div>
+</div> -->
+  <form (submit)="onSubmit()" #submitform="ngForm">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="product.name" name="name"
+            aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Des</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="product.description"
+            name="description">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Url</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="product.url" name="url">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -63,6 +63,11 @@
     <app-home-detail *ngIf="showDetail" [detail]="dataDetail"></app-home-detail>
 </p-dialog>
 
+<p-dialog header="Chỉnh sửa sản phẩm" [(visible)]="showDetail" [modal]="true" [style]="{width: '50vw'}"
+    [closeOnEscape]="true">
+    <app-home-detail *ngIf="showDetail" [detail]="dataDetail"></app-home-detail>
+</p-dialog>
+
 <p-dialog header="Edit" [(visible)]="displayEdit" [modal]="true" [style]="{width: '50vw'}" [closeOnEscape]="true">
     <!--  <form (submit)="onSubmit(submitform)" #submitform="ngForm">
     <div>Name</div> 
