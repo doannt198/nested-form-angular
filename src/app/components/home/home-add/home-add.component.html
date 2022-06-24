@@ -60,7 +60,7 @@
 
 <p-dialog header="Thông tin chi tiết sản phẩm" [(visible)]="showDetail" [modal]="true" [style]="{width: '50vw'}"
     [closeOnEscape]="true">
-    <app-home-detail *ngIf="showDetail" [detail]="dataDetail"></app-home-detail>
+    <app-home-edit></app-home-edit>
 </p-dialog>
 
 <p-dialog header="Chỉnh sửa sản phẩm" [(visible)]="showDetail" [modal]="true" [style]="{width: '50vw'}"

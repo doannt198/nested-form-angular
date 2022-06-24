@@ -93,9 +93,5 @@ export class HomeAddComponent implements OnInit {
 
   showDialogEdit(item: any) {
     this.displayEdit = true;
-    this.name = item.name,
-    this.description = item.description,
-    this.url = item.url,
-    this.idEdit = item.id;
   }
 }
