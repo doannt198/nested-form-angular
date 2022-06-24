@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { DialogModule } from 'primeng/dialog';
@@ -35,6 +35,10 @@ export class HomeAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.getListProduct();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log(changes)
   }
 
   getListProduct() {
@@ -90,9 +94,9 @@ export class HomeAddComponent implements OnInit {
 
   showDialogEdit(item: any) {
     this.displayEdit = true;
-    (this.name = item.name),
-      (this.description = item.description),
-      (this.url = item.url),
-      (this.idEdit = item.id);
+    this.name = item.name,
+    this.description = item.description,
+    this.url = item.url,
+    this.idEdit = item.id;
   }
 }
