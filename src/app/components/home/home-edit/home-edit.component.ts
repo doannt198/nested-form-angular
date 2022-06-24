@@ -3,7 +3,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { FormBuilder } from '@angular/forms';
-import { filter, map } from 'rxjs';
+
 @Component({
   selector: 'app-home-edit',
   templateUrl: './home-edit.component.html',
