@@ -43,6 +43,11 @@ export class MenuComponent implements OnInit {
         icon: 'pi pi-bell',
         routerLink: '/object',
       },
+      { 
+        label: 'Bài tập',
+        icon: 'pi pi-bell',
+        routerLink: '/array',
+      },
     ];
   }
   
