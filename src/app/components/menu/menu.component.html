@@ -1,7 +1,9 @@
 <div class="menu-button">
-    <p-button type="button" class="mr-2"  label="Menu"(click)="visibleSidebar1 = true" ></p-button>
+    <button pButton pRipple type="button" icon="pi pi-align-justify" (click)="visibleSidebar1 = true"  class="p-button-rounded p-button-text"></button>
 </div>
 <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000" >
     <h3>Menu</h3>
     <p-menu [model]="items" (click)="onShowEvent()"></p-menu>
 </p-sidebar>
+
+<router-outlet></router-outlet>
