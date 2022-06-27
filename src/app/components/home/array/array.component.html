@@ -1,5 +1,6 @@
 <div class="wrapper">
     <div class="home">
-    <app-input-output [dataSlide]="dataSlide"></app-input-output>
+    <app-input-output [dataSlide]="dataSlide" (load)="onLoad($event)" [value]="value"></app-input-output>
     </div>
+    {{giatri |json}}
 </div>

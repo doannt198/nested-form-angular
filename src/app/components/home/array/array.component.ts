@@ -8,6 +8,7 @@ import * as queryString from 'query-string';
 })
 export class ArrayComponent implements OnInit {
   constructor(private apiService: ApiService) {}
+  value = 0
   dataSlide: any;
   query:any = {
     Screen: '', 
@@ -15,6 +16,7 @@ export class ArrayComponent implements OnInit {
     offSet: 0,
     pageSize: 10,
   };
+  giatri:any;
   ngOnInit(): void {
     this.getListSlide()
   }
@@ -24,5 +26,11 @@ export class ArrayComponent implements OnInit {
     this.apiService.getListSlide(queryParams).subscribe((reponse => {
       this.dataSlide = reponse.Data.Data
     }))
+  }
+
+  onLoad(event:any):void {
+    this.getListSlide();
+   this.value = this.value + 1 
+    this.giatri = event
   }
 }
