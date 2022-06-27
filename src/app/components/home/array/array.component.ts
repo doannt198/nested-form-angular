@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import * as queryString from 'query-string';
 import { MessageService } from 'primeng/api';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-array',
   templateUrl: './array.component.html',
@@ -11,7 +12,8 @@ import { MessageService } from 'primeng/api';
 export class ArrayComponent implements OnInit {
   constructor(
     private apiService: ApiService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: ActivatedRoute
     ) {}
   value = 0
   dataSlide: any;
@@ -25,8 +27,9 @@ export class ArrayComponent implements OnInit {
 
   ngOnInit(): void {
     this.getListSlide()
+    
   }
-
+  
   getListSlide(): void {
     const queryParams = queryString.stringify(this.query)
     this.apiService.getListSlide(queryParams).subscribe((reponse => {
@@ -34,7 +37,7 @@ export class ArrayComponent implements OnInit {
     }))
   }
 
-  onLoad(event:boolean):void {
+  onLoad(event:boolean): void {
     this.getListSlide();
     if(event == true) {
       this.value = this.value + 1 
