@@ -1,13 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import * as queryString from 'query-string';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-array',
   templateUrl: './array.component.html',
   styleUrls: ['./array.component.scss'],
+ 
 })
 export class ArrayComponent implements OnInit {
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private messageService: MessageService
+    ) {}
   value = 0
   dataSlide: any;
   query:any = {
@@ -28,9 +33,15 @@ export class ArrayComponent implements OnInit {
     }))
   }
 
-  onLoad(event:any):void {
+  onLoad(event:boolean):void {
     this.getListSlide();
-   this.value = this.value + 1 
-    this.giatri = event
+    if(event == true) {
+      this.value = this.value + 1 
+      this.messageService.add({ severity: 'success', summary: "Thông báo", detail: 'Tăng giá trị'})
+    }
+    if(event == false) {
+      this.value = this.value - 1
+      this.messageService.add({ severity: 'success', summary: "Thông báo", detail: 'Giảm giá trị'})
+    }
   }
 }

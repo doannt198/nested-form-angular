@@ -19,7 +19,7 @@ export class InputOutputComponent implements OnInit, OnChanges {
   @Output() load = new EventEmitter<any>();
   dataSS: any;
   slider = false
-  gt:any ="Test"
+  
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.dataSlide && this.dataSlide && this.dataSlide.length > 0) {
       this.dataSS = this.dataSlide
@@ -31,7 +31,11 @@ export class InputOutputComponent implements OnInit, OnChanges {
     
   }
 
-  handleLoadList() {
-    this.load.emit(this.gt)
+  handlePlus(): void {
+    this.load.emit(true)
+  }
+
+  handlePre(): void {
+    this.load.emit(false)
   }
 }

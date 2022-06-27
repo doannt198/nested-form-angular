@@ -27,10 +27,11 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MenuModule } from 'primeng/menu';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputOutputComponent } from './components/home/input-output/input-output.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,9 +66,10 @@ import { AgGridModule } from 'ag-grid-angular';
     EditorModule,
     ConfirmPopupModule,
     ConfirmDialogModule,
-    AgGridModule
+    AgGridModule,
+    ToastModule
   ],
-  providers: [ConfirmationService],
+  providers: [ConfirmationService, MessageService ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
