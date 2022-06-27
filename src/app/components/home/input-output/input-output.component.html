@@ -1,17 +1,18 @@
 <div class="button-action">
-    <button pButton pRipple type="button" class="p-button-raised p-button-text mr-3" icon="pi pi-plus" (click)="handlePlus()"></button>
-    <button pButton pRipple type="button" class="p-button-raised p-button-text" icon="pi pi-bolt" (click)="handlePre()"></button>
+    <button pButton pRipple type="button" class="p-button-raised p-button-text mr-3" icon="pi pi-plus"
+        (click)="handlePlus()"></button>
+    <button pButton pRipple type="button" class="p-button-raised p-button-text" icon="pi pi-bolt"
+        (click)="handlePre()"></button>
 </div>
 
 <div class="list" *ngFor="let item of dataSS">
-    <div class="list-item"  [ngClass]="item.Name === 'Slider8' ? 'red': ''">
-            {{item?.Name}}
+    <div class="list-item" [ngClass]="item.Name === 'Slider8' ? 'red': ''">
+        {{item?.Name}}
     </div>
     <div class="list-item">
         <!-- <img [src]="item?.ImageUrl" alt="img" style="width:200px"> -->
     </div>
     <div>
-
     </div>
 </div>
 {{value}}
