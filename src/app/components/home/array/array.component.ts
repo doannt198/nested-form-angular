@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-array',
@@ -6,21 +7,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./array.component.scss']
 })
 export class ArrayComponent implements OnInit {
-  @Input() check : any
-  @Output() toggle:EventEmitter<any> = new EventEmitter();
-  constructor() { }
-  text: string
-  results:any[] = []
-  action = {
-    name:"",
-    age: 0,
-    check: false
-  }
+
+  constructor(
+    private apiService: ApiService
+  ) { }
+
   ngOnInit(): void {
     
   }
-
-  hdtoggle() {
-    this.toggle.emit();
-  }
+  
+  
 }

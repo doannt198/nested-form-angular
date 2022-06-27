@@ -29,6 +29,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { InputOutputComponent } from './components/home/input-output/input-output.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ArrayComponent,
     ObjectComponent,
     MenuComponent,
+    InputOutputComponent,
   ],
   imports: [
     BrowserModule,
