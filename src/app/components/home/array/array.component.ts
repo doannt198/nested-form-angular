@@ -22,7 +22,7 @@ export class ArrayComponent implements OnInit {
   getListSlide(): void {
     const queryParams = queryString.stringify(this.query)
     this.apiService.getListSlide(queryParams).subscribe((reponse => {
-      this.dataSlide = reponse.Data
+      this.dataSlide = reponse.Data.Data
     }))
   }
 }

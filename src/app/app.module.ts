@@ -30,6 +30,7 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputOutputComponent } from './components/home/input-output/input-output.component';
+import { AgGridModule } from 'ag-grid-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { InputOutputComponent } from './components/home/input-output/input-outpu
     MenuModule,
     EditorModule,
     ConfirmPopupModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    AgGridModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent],
