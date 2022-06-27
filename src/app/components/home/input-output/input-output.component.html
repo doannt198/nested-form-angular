@@ -9,8 +9,8 @@
     <div class="list-item" [ngClass]="item.Name === 'Slider8' ? 'red': ''">
         {{item?.Name}}
     </div>
-    <div class="list-item">
-        <!-- <img [src]="item?.ImageUrl" alt="img" style="width:200px"> -->
+    <div class="list-item" [ngStyle]="{'width':'10px'}">
+        <img [src]="item?.ImageUrl" alt="img">
     </div>
     <div>
     </div>
