@@ -40,12 +40,12 @@ export class MenuComponent implements OnInit {
       },
       {
         label: 'Thư viện',
-        icon: 'pi pi-bell',
+        icon: 'pi pi-globe',
         routerLink: '/object',
       },
       { 
-        label: 'Bài tập',
-        icon: 'pi pi-bell',
+        label: 'Test',
+        icon: 'pi pi-book',
         routerLink: '/array',
       },
     ];
