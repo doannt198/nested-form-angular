@@ -37,11 +37,9 @@ export class ArrayComponent implements OnInit {
     this.getListSlide();
     if(event == true) {
       this.value = this.value + 1 
-      this.messageService.add({ severity: 'success', summary: "Thông báo", detail: 'Tăng giá trị'})
     }
     if(event == false) {
       this.value = this.value - 1
-      this.messageService.add({ severity: 'success', summary: "Thông báo", detail: 'Giảm giá trị'})
     }
   }
 }
