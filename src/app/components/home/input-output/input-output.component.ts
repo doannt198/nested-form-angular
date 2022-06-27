@@ -19,7 +19,8 @@ export class InputOutputComponent implements OnInit, OnChanges {
   @Output() load = new EventEmitter<any>();
   dataSS: any;
   slider = false
-  
+  styleTrue: {color: 'red', width: '10px'}
+  styleFalse: {color: 'blue', widthL: '20px'}
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.dataSlide && this.dataSlide && this.dataSlide.length > 0) {
       this.dataSS = this.dataSlide
