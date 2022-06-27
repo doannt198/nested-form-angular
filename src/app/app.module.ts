@@ -32,6 +32,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputOutputComponent } from './components/home/input-output/input-output.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { ToastModule } from 'primeng/toast';
+import { ChartComponent } from './components/home/chart/chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { ToastModule } from 'primeng/toast';
     ObjectComponent,
     MenuComponent,
     InputOutputComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,

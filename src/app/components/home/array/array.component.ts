@@ -22,6 +22,7 @@ export class ArrayComponent implements OnInit {
     pageSize: 10,
   };
   giatri:any;
+
   ngOnInit(): void {
     this.getListSlide()
   }

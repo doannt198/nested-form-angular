@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArrayComponent } from './components/home/array/array.component';
+import { ChartComponent } from './components/home/chart/chart.component';
 import { HomeAddComponent } from './components/home/home-add/home-add.component';
 import { HomeDetailComponent } from './components/home/home-detail/home-detail.component';
 import { HomeEditComponent } from './components/home/home-edit/home-edit.component';
@@ -55,6 +56,10 @@ const appRoutes: Routes = [
     path:'object',
    component: ObjectComponent
   },
+  { 
+    path:'chart',
+   component: ChartComponent
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
