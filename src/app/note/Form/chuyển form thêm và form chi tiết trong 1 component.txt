@@ -1,0 +1,9 @@
+Code:
+ handleParams() {
+    this.activatedRoute.params
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((params) => {
+        this.id = params.id === 'them-moi' ? '' : params.id;
+        this.getDetail();
+      });
+  } ;

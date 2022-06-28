@@ -32,6 +32,18 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputOutputComponent } from './components/home/input-output/input-output.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { ToastModule } from 'primeng/toast';
+import { ChartComponent } from './components/home/chart/chart.component';
+import { LoginComponent } from './components/login/login.component';
+import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh.component';
+import { ThuVienComponent } from './components/home/thu-vien/thu-vien.component';
+import { TreeModule } from 'primeng/tree';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environments/environment';
+import { AuthGuardGuard } from './services/auth-guard.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +59,10 @@ import { ToastModule } from 'primeng/toast';
     ObjectComponent,
     MenuComponent,
     InputOutputComponent,
+    ChartComponent,
+    LoginComponent,
+    ThuVienAnhComponent,
+    ThuVienComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,9 +83,15 @@ import { ToastModule } from 'primeng/toast';
     ConfirmPopupModule,
     ConfirmDialogModule,
     AgGridModule,
-    ToastModule
+    ToastModule,
+    TreeModule,
+    ContextMenuModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
   ],
-  providers: [ConfirmationService, MessageService ],
+  providers: [ConfirmationService, MessageService, AuthGuardGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

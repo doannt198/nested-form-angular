@@ -1,0 +1,18 @@
+Angular là một khung thiết kế ứng dụng và nền tảng phát triển để tạo các ứng dụng một trang hiệu quả và phức tạp.
+
+Component
+
+        angular.json
+        package.json:
+        tsconfig.json
+
+Module 
+
+Data binding
+
+
+Directive:  Component Directive (Directive thành phần)
+            Structural directive (Directive cấu trúc)
+            Attribute directive (Directive thuộc tính)
+
+Service:

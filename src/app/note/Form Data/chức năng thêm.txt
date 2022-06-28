@@ -1,0 +1,43 @@
+ import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { Product } from './model/product.model';
+.html
+<form (submit)="onAdd(submitForm)" #submitForm="ngForm">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Tên sản phẩm</label>
+                    <input type="newname" class="form-control" [(ngModel)]='name' name="name"/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Mô tả</label>
+                    <input type="description" class="form-control" [(ngModel)]='description' name="description">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Link hình ảnh</label>
+                    <input type="url" class="form-control"  [(ngModel)]='url' name='url'>
+                </div>
+                <button type="submit" class="btn btn-primary" >Thêm sản phẩm</button>
+</form>
+ // Sử dụng (submit) thêm sự kiện onAdd truyền #submitForm="ngForm" 
+//  Trong input thêm 2 thuộc tính là [(ngModel)] và name=""
+.ts
+0. import service 
+1..products: Product[] = [];
+2.constructor( private ProducService:ProductService) //
+3..onAdd(submitForm: any){
+  this.ProducService.onadd(submitForm.value).subscribe(insertedProduct => this.products.push(insertedProduct) )
+      this.name = '';
+      this.description = '';
+      this.url = '';
+      alert('Thêm thành công!');   
+}
+.service
+
+const apiUrlpost = 'https://tano-api.herokuapp.com/products/add';
+----------------------------------------------------------------
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'Application/json' })
+}
+-----------------------------------------------------------------
+onadd(newProduct: Product): Observable<Product> {
+    return this.httpClient.post<Product>(apiUrlpost, newProduct, httpOptions);
+ }

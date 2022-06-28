@@ -1,5 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -8,7 +9,9 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
   visibleSidebar1: any;
   items: MenuItem[];
   ngOnInit(): void {
@@ -40,17 +43,33 @@ export class MenuComponent implements OnInit {
       },
       {
         label: 'Thư viện',
-        icon: 'pi pi-bell',
+        icon: 'pi pi-globe',
         routerLink: '/object',
       },
       { 
-        label: 'Bài tập',
-        icon: 'pi pi-bell',
-        routerLink: '/array',
+        label: 'Test',
+        icon: 'pi pi-book',
+        routerLink: '/test-component',
+      },
+      { 
+        label: 'Chart.js',
+        icon: 'pi pi-chart-bar',
+        routerLink: '/chart',
+      },
+      { 
+        label: 'Library',
+        icon: 'pi pi-image',
+        routerLink: '/thu-vien',
       },
     ];
   }
   
+  logOut() {
+    localStorage.removeItem('user')
+    this.router.navigate(['login'])
+    this.visibleSidebar1 =false
+  }
+
   onShowEvent() {
       this.visibleSidebar1 =false
   }

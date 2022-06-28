@@ -1,0 +1,12 @@
+// Deploy ứng dụng Angular lên Firebase
+
+1. Build Angular Application: ng build --prod
+
+2.Install Firebase Tools: npm i -g firebase-tools
+
+3. Login Vào Firebase: firebase login (Nếu muốn Login vào 1 tài khoản khác, thì chỉ cần Logout bằng lệnh: firebase init)
+
+4. Init Firebase: firebase init.
+
+5. Deploy Angular Application: firebase deploy --only hosting
+

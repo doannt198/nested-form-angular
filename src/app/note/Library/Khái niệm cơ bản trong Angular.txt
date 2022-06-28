@@ -1,0 +1,23 @@
+@injectable dùng để mô tả một class trong service
+
+Dependency Injection: Khi một class muốn được gọi (được tiêm vào, inject vào) một component cần gọi hàm bên trong nó. gọi ở hàm khởi tạo (constructor) của component là sẽ tiêm được service vào để dùng nó bên trong component đó
+
+
+--service: -Nếu chúng ta dùng service ở nhiều nơi cùng lúc và không muốn khai báo nhiều lần, component nào cũng phải tiêm nó vào. Thì lúc này có thể khai báo service ở phần providers của module hoặc component luôn.
+
+
+--ng-content-c0
+
+-- EventEmitter (lấy giá trị trả về từ sự kiện người dùng thao tác).
+
+--Transclusion (trao đổi giữa directive)
+
+-- Observables là luồng dữ liệu được gửi nhận từ api. Observables sẽ chứa data json từ server gửi tới nhưng nó không phải là data json thuần.
+
+--phải dùng hàm subcribe để đọc ra cái data đã được map.
+
+--input 
+
+--output
+
+-- Router: Children -Thêm component con
