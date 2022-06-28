@@ -36,6 +36,8 @@ import { ChartComponent } from './components/home/chart/chart.component';
 import { LoginComponent } from './components/login/login.component';
 import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh.component';
 import { ThuVienComponent } from './components/home/thu-vien/thu-vien.component';
+import { TreeModule } from 'primeng/tree';
+import { ContextMenuModule } from 'primeng/contextmenu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +77,9 @@ import { ThuVienComponent } from './components/home/thu-vien/thu-vien.component'
     ConfirmPopupModule,
     ConfirmDialogModule,
     AgGridModule,
-    ToastModule
+    ToastModule,
+    TreeModule,
+    ContextMenuModule
   ],
   providers: [ConfirmationService, MessageService ],
   bootstrap: [AppComponent],
