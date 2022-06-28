@@ -38,6 +38,11 @@ import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh
 import { ThuVienComponent } from './components/home/thu-vien/thu-vien.component';
 import { TreeModule } from 'primeng/tree';
 import { ContextMenuModule } from 'primeng/contextmenu';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +84,11 @@ import { ContextMenuModule } from 'primeng/contextmenu';
     AgGridModule,
     ToastModule,
     TreeModule,
-    ContextMenuModule
+    ContextMenuModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
   ],
   providers: [ConfirmationService, MessageService ],
   bootstrap: [AppComponent],
