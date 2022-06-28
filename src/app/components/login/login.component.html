@@ -1,17 +1,15 @@
 <div class="wrapper">
     <div class="form-login">
-        <form>
+        <form (ngSubmit)="onLogin(submitForm)" #submitForm="ngForm" >
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label">User</label>
+                <input type="text" class="form-control" name="username" [(ngModel)]="user.username" id="exampleInputEmail1" required aria-describedby="emailHelp" #userName="ngModel">
+                <div class="invalid" *ngIf="submited && userName.errors?.required" > Nhập Username </div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" required [(ngModel)]="user.password" #pass="ngModel">
+                <div class="invalid" *ngIf="submited && pass.errors?.required" > Nhập Password </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -13,59 +13,73 @@ import { TemplateDrivenFormHaiComponent } from './components/home/template-drive
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
 import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh.component';
 import { ThuVienComponent } from './components/home/thu-vien/thu-vien.component';
+import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
-
+import { AuthGuardGuard } from './services/auth-guard.guard';
 
 const appRoutes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'login',
+   component: LoginComponent
+  },
   {
     path: 'home',
     component: HomeComponent,
-    children: []
   },
   {
     path: 'home-detail/:id',
     component: HomeDetailComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'them-san-pham',
     component: HomeAddComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'home-edit/:id',
     component: HomeEditComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'reactive-form',
     component: ReactiveFormComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'template-driven-form',
     component: TemplateDrivenFormComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'reactive-form-hai',
     component: ReactiveFormHaiComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'tempalte-driven-form-hai',
     component: TemplateDrivenFormHaiComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'test-component',
     component: ArrayComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'object',
     component: ObjectComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'chart',
     component: ChartComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'thu-vien',
     component: ThuVienComponent,
+    canActivate: [AuthGuardGuard]
   },
 ];
 @NgModule({

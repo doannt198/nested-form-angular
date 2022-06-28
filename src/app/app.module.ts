@@ -43,6 +43,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
+import { AuthGuardGuard } from './services/auth-guard.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +91,7 @@ import { environment } from 'src/environments/environment';
     AngularFireStorageModule,
     AngularFirestoreModule,
   ],
-  providers: [ConfirmationService, MessageService ],
+  providers: [ConfirmationService, MessageService, AuthGuardGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
