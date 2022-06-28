@@ -36,10 +36,11 @@ export class LoginComponent implements OnInit {
     }
     if(this.user.username == "admin" && this.user.password == "admin") {
       sessionStorage.setItem('user', JSON.stringify(this.user))
-      
+      this.messageService.add({severity: 'success', summary: 'Thông báo', detail: 'Đăng nhập thành công'})
+      this.router.navigate(['thu-vien'])
     } else {
       this.error = -1
     }
-    this.messageService.add({severity: 'success', summary: 'Thông báo', detail: 'Đăng nhập thành công'})
+   
   }
 }

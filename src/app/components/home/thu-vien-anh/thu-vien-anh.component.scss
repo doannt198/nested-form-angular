@@ -24,3 +24,9 @@
         }
     }
 }
+
+:host::ng-deep {
+    .p-tree {
+        border: none;
+    }
+}

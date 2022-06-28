@@ -61,11 +61,6 @@ export class MenuComponent implements OnInit {
         icon: 'pi pi-image',
         routerLink: '/thu-vien',
       },
-      { 
-        label: 'Đăng xuất',
-        icon: 'pi pi-replay',
-        routerLink: '/login'
-      },
     ];
   }
   
