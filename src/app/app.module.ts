@@ -34,6 +34,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { ToastModule } from 'primeng/toast';
 import { ChartComponent } from './components/home/chart/chart.component';
 import { LoginComponent } from './components/login/login.component';
+import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { LoginComponent } from './components/login/login.component';
     InputOutputComponent,
     ChartComponent,
     LoginComponent,
+    ThuVienAnhComponent,
   ],
   imports: [
     BrowserModule,

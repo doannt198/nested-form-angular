@@ -11,55 +11,60 @@ import { ReactiveFormHaiComponent } from './components/home/reactive-form-hai/re
 import { ReactiveFormComponent } from './components/home/reactive-form/reactive-form.component';
 import { TemplateDrivenFormHaiComponent } from './components/home/template-driven-form-hai/template-driven-form-hai.component';
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
+import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh.component';
 import { MenuComponent } from './components/menu/menu.component';
 
 
 const appRoutes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo:'home' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
-  { 
-    path:'home-detail/:id',
-   component:HomeDetailComponent
+  {
+    path: 'home-detail/:id',
+    component: HomeDetailComponent,
   },
-  { 
-    path:'them-san-pham',
-   component:HomeAddComponent
+  {
+    path: 'them-san-pham',
+    component: HomeAddComponent,
   },
-  { 
-    path:'home-edit/:id',
-   component:HomeEditComponent
+  {
+    path: 'home-edit/:id',
+    component: HomeEditComponent,
   },
-  { 
-    path:'reactive-form',
-   component: ReactiveFormComponent
+  {
+    path: 'reactive-form',
+    component: ReactiveFormComponent,
   },
-  { 
-    path:'template-driven-form',
-   component: TemplateDrivenFormComponent
+  {
+    path: 'template-driven-form',
+    component: TemplateDrivenFormComponent,
   },
-  { 
-    path:'reactive-form-hai',
-   component: ReactiveFormHaiComponent
+  {
+    path: 'reactive-form-hai',
+    component: ReactiveFormHaiComponent,
   },
-  { 
-    path:'tempalte-driven-form-hai',
-   component: TemplateDrivenFormHaiComponent
+  {
+    path: 'tempalte-driven-form-hai',
+    component: TemplateDrivenFormHaiComponent,
   },
-  { 
-    path:'array',
-   component: ArrayComponent
+  {
+    path: 'array',
+    component: ArrayComponent,
   },
-  { 
-    path:'object',
-   component: ObjectComponent
+  {
+    path: 'object',
+    component: ObjectComponent,
   },
-  { 
-    path:'chart',
-   component: ChartComponent
-  }
+  {
+    path: 'chart',
+    component: ChartComponent,
+  },
+  {
+    path: 'thu-vien-anh',
+    component: ThuVienAnhComponent,
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
