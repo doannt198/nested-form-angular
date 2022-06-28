@@ -8,6 +8,7 @@
             <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
                 <h3>Menu</h3>
                 <p-menu [model]="items" (click)="onShowEvent()"></p-menu>
+                <button pButton pRipple type="button" label="Đăng xuất" class="p-button-raised p-button-text" (click)="logOut()"></button>
             </p-sidebar>
         </div>
         <div class="col-9 mt-4">

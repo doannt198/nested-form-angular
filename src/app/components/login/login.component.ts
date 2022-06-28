@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -9,8 +10,9 @@ import { MessageService } from 'primeng/api';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private messageService: MessageService
-  ) { }
+    private messageService: MessageService, 
+    private router: Router
+  ) {}
   user: any = {
     username: '', 
     password: ''
@@ -22,8 +24,8 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    if(localStorage.getItem('user')) {
-
+    if(sessionStorage.getItem('user')) {
+      this.router.navigate(['them-san-pham'])
     }
   }
 
@@ -33,10 +35,11 @@ export class LoginComponent implements OnInit {
       return 
     }
     if(this.user.username == "admin" && this.user.password == "admin") {
-      localStorage.setItem('user', JSON.stringify(this.user))
-      this.messageService.add({severity: 'success', summary: 'Thông báo', detail: 'Đăng nhập thành công'})
+      sessionStorage.setItem('user', JSON.stringify(this.user))
+      
     } else {
       this.error = -1
     }
+    this.messageService.add({severity: 'success', summary: 'Thông báo', detail: 'Đăng nhập thành công'})
   }
 }
