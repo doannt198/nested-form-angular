@@ -12,6 +12,7 @@ import { ReactiveFormComponent } from './components/home/reactive-form/reactive-
 import { TemplateDrivenFormHaiComponent } from './components/home/template-driven-form-hai/template-driven-form-hai.component';
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
 import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh.component';
+import { ThuVienComponent } from './components/home/thu-vien/thu-vien.component';
 import { MenuComponent } from './components/menu/menu.component';
 
 
@@ -62,8 +63,8 @@ const appRoutes: Routes = [
     component: ChartComponent,
   },
   {
-    path: 'thu-vien-anh',
-    component: ThuVienAnhComponent,
+    path: 'thu-vien',
+    component: ThuVienComponent,
   },
 ];
 @NgModule({
