@@ -35,6 +35,7 @@ import { ToastModule } from 'primeng/toast';
 import { ChartComponent } from './components/home/chart/chart.component';
 import { LoginComponent } from './components/login/login.component';
 import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh.component';
+import { ThuVienComponent } from './components/home/thu-vien/thu-vien.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh
     ChartComponent,
     LoginComponent,
     ThuVienAnhComponent,
+    ThuVienComponent,
   ],
   imports: [
     BrowserModule,
