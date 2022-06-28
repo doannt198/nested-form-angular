@@ -26,62 +26,65 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-  },
-  {
-    path: 'home-detail/:id',
-    component: HomeDetailComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'them-san-pham',
-    component: HomeAddComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'home-edit/:id',
-    component: HomeEditComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'reactive-form',
-    component: ReactiveFormComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'template-driven-form',
-    component: TemplateDrivenFormComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'reactive-form-hai',
-    component: ReactiveFormHaiComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'tempalte-driven-form-hai',
-    component: TemplateDrivenFormHaiComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'test-component',
-    component: ArrayComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'object',
-    component: ObjectComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'chart',
-    component: ChartComponent,
-    canActivate: [AuthGuardGuard]
-  },
-  {
-    path: 'thu-vien',
-    component: ThuVienComponent,
-    canActivate: [AuthGuardGuard]
-  },
+    children: [
+      {
+        path: 'home-detail/:id',
+        component: HomeDetailComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'them-san-pham',
+        component: HomeAddComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'home-edit/:id',
+        component: HomeEditComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'reactive-form',
+        component: ReactiveFormComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'template-driven-form',
+        component: TemplateDrivenFormComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'reactive-form-hai',
+        component: ReactiveFormHaiComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'tempalte-driven-form-hai',
+        component: TemplateDrivenFormHaiComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'test-component',
+        component: ArrayComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'object',
+        component: ObjectComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'chart',
+        component: ChartComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'thu-vien',
+        component: ThuVienComponent,
+        canActivate: [AuthGuardGuard]
+      },
+    ]
+  }
+ 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
