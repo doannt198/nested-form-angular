@@ -1,0 +1,55 @@
+- Khai báo 1 mảng đối tượng: var arr = [ {id: 1, name: 1} ];
+- Thêm phần từ vào cuối mảng: push : arr.push( { id: 2, name: 2} );
+- Thêm phần tử vào đầu mảng: unShift: arr.unShift( {id: 3, name: 3}); => [ {id: 1, name: 1}, {id: 2, name: 2}, {id: 3, name: 3}]
+- Xóa phần tử khỏi mảng: splice
+- Tìm vị trí phần tử  thỏa mãn điều kiện trong mảng: findIndex trả lại số nguyên vị trí, không thấy trả lại -1
+- Tìm phần tử trong mảng thỏa mãn điều kiện: find: trả kiểu của đối tượng trong mảng, không thấy trả lại null
+- Sửa phần tử kiểu object trong mảng: 
+          Dùng Index: 
+                 const index = arr.findIndex(t => t.id == 2);
+                 array[index].name = 888;
+          Dùng find đối tượng:
+                 const item = arr.find(t => t.id == 2)
+                 item.name = 777777777;
+- Sắp xếp mảng:
+          Tăng dần: arr.sort((first, second) => first.id - second.id)
+          Giảm dần: arr.sort((first, second) => first.id - second.id)
+
+Đối tượng:
+- Tạo đối tượng: const obj = { id: 1, name: '1'};
+- Thêm mội trường vào đối tượng: obj.add = 'test'
+- Xóa 1 trường trong đối tượng: delete obj.add
+
+
+************************************************************************************************************************
+
+var arr = [ {id: 1, name: 'A'} ];
+var push = arr.push( { id: 2, name: 'B'} );
+var unshirt = arr.unshift( {id: 3, name: 'C'})
+console.log(arr);
+var myID=3;
+var index= arr.findIndex(myarr=> myarr.id == myID)
+console.log(index)
+
+var myID=2;
+var index=arr.find(myarr=>myarr.id==myID)
+console.log(index)
+
+const inde =arr.findIndex(myarr=>myarr.id==2)
+  arr[inde].name=888
+  console.log(arr)
+  
+ const indec= arr.find(myarr=>myarr.id==2)
+ indec.name=234
+ console.log(arr)
+ 
+ var b = ['a', 'b', 'c']
+ var t = b.find(a => a == 'b')
+ t = 'd';
+
+ arr.sort((first, second) => first.id + second.id) // Sắp xếp giảm dần theo id
+ console.log(arr) 
+
+ arr.sort((first, second) => first.id - second.id) // Sắp xếp tăng dần theo id
+ console.log(arr) 
+

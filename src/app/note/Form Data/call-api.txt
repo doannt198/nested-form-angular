@@ -1,0 +1,70 @@
+Các bước gọi api 
+ trong file service: 1. import { Observable, of } from 'rxjs';
+                         import { HttpClient, HttpHeaders } from '@angular/common/http';
+		    
+                     2. const httpOptions = {
+                                             headers: new HttpHeaders({ 'Content-Type': 'Application/json' })
+                                            }
+                     3.
+			khai báo bên trong contructor (private httpClient:HttpClient )
+	             
+                     4.Gọi api get dạng tổng quan getNotification(queryString:string):Observable<any> {
+                                                   return this.httpClient.get<any>(`http://103.81.87.134:5002/api/report/getNotiall?${queryString}`)        
+                                         }
+-------------------------------------------------------------------------------------------------------------------
+Trong file TS:
+	1.import service sử dụng
+ 	2 sử dụng thư viện queryString: import * as queryString from 'query-string';
+	3 khi báo trong hàm  contructor :  constructor(private NotificationService :NotificationService)
+  4. Viết hàm gét sản phẩm VD:
+   getNotification(){
+    const params = queryString.stringify(this.query);
+    this.NotificationService.getNotification(params).subscribe(response => {
+      this.datathongbao = response.data;
+      if (this.datathongbao && this.datathongbao.length) {
+        this.totalRecord = this.datathongbao[0].totalRecord;
+      }
+    })
+  }
+  5 .Khai báo bên trong hàm ngOnInit(){this.getNotification}
+
+
+  
+Get api:
+
+  getAll(){
+    this.CallApiService.getAll().subscribe((res:any)=>{
+      this.products = res
+    })
+  }
+
+Submit 1 form THÊM:
+
+<form (submit)="onAdd(submitForm)" #submitForm="ngForm">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tên sản phẩm</label>
+        <input type="newname" class="form-control" [(ngModel)]='name' name="name"/>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Mô tả</label>
+        <input type="description" class="form-control" [(ngModel)]='description' name="description">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Link hình ảnh</label>
+        <input type="url" class="form-control"  [(ngModel)]='url' name='url'>
+    </div>
+    <button type="submit" class="btn btn-primary" >Thêm sản phẩm</button>
+</form>
+
+
+ onAdd(submitForm:any):void{
+   /*  const newProduct: Product = new Product ();
+     name=newProduct.name;
+     description = newProduct.description;
+     url=newProduct.url; */
+    this.CallApiService.add(submitForm.value).subscribe(insertedProduct =>{this.products.push(insertedProduct)})
+   
+    this.name='';
+    this.description='';
+    this.url='';
+}

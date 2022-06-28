@@ -1,0 +1,28 @@
+Phân trang primeng: 
+
+.paginate(event) {
+    this.query.offSet = event.first;
+    this.first = event.first;
+    this.query.pageSize = event.rows;
+    this.load();
+}
+
+
+  <div class="grid-default" #container>
+            <app-list-grid-angular *ngIf="columnDefs.length > 0" [listsData]="listsData" [height]="heightGrid"
+                [rowSelection]="'multiple'" (callback)="rowSelected($event)" [columnDefs]="columnDefs">
+            </app-list-grid-angular>
+            <div class="paginator">
+                <span>Từ {{ countRecord.currentRecordStart }} đến
+                    {{ countRecord.currentRecordEnd }}
+                    trên tổng số
+                    {{ countRecord.totalRecord }} kết quả</span>
+                <p-paginator [rows]="query.pageSize" [totalRecords]="countRecord.totalRecord" [first]="first"
+                    (onPageChange)="paginate($event)" [rowsPerPageOptions]="[15,30,45,100,200,{ showAll: 'ALL' }]">
+        </p-paginator>
+    </div>
+</div>
+ Từ ... đến... trên tổng số n kết quả
+
+ 
+

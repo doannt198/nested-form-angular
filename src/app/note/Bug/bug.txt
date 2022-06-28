@@ -1,0 +1,2 @@
+core.mjs:6495 ERROR TypeError: value.map is not a function
+=> lỗi do chọn sai kiểu nhận dữ liệu TreeSelect nhận Object nhưng chọn string 

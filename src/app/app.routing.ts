@@ -21,6 +21,7 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    children: []
   },
   {
     path: 'home-detail/:id',
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
     component: TemplateDrivenFormHaiComponent,
   },
   {
-    path: 'array',
+    path: 'test-component',
     component: ArrayComponent,
   },
   {

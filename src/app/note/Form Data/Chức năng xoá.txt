@@ -1,0 +1,42 @@
+
+//  nhớ thêm vào dười import: const httpOptions = {
+          headers: new HttpHeaders({ 'Content-Type': 'Application/json' })
+          }
+
+.html
+
+<button class="btn btn-success" (click)="onDelete(item.id)"> Xóa sản phẩm</button> // gọi sự kiện cho nút xóa 
+
+.ts
+1 products: Product[] =[];
+2: onDelete(id: number): void { // truyền id từ html có thể thử bằng cách alert ra xem đã có id hay chưa?
+    this.ProductService.ondelete(id).subscribe(_ => {
+      this.products = this.products.filter(eachProduct => eachProduct.id !== id);
+      alert('Xóa thành công!');
+    });
+    this.ProductService.getProduct().subscribe((res: any) => { //gọi lại get
+      this.products=res
+    })
+  }
+
+2.1: onDelete(id: number): void { // truyền id từ html có thể thử bằng cách alert ra xem đã có id hay chưa?
+    this.ProductService.ondelete(id).subscribe(data => {
+	 this.ProductService.getProduct().subscribe((res: any) => { //gọi lại get
+      this.products=res
+    })
+      alert('Xóa thành công!');
+    });
+   
+    })
+  }
+
+.service
+
+export class ProductService {
+  private apiUrldelete = 'https://tano-api.herokuapp.com/products/delete';
+ 
+ondelete(id: number): Observable<Product[]> { // có thể thay Product[] bằng any
+    const url = `${this.apiUrldelete}/${id}`;
+    return this.httpClient.delete<Product[]>(url, httpOptions).pipe()
+}
+

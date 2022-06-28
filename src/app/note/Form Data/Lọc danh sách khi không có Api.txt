@@ -1,0 +1,22 @@
+//Lọc danh sách 
+
+ datadichvuFilter: any = []
+
+1.tạo 1 biến = data từ api trả về dùng để lưu kết quả
+
+2 handleChange(event:any){
+   if(event.value.value===0)
+   {
+    this.datadichvuFilter  = this.datadichvu // xem tất cả 
+   }else if(event.value.value===1)
+   {
+    this.datadichvuFilter  = this.datadichvu.filter((t: any) => t.isActive);
+    const a = this.datadichvu.filter((t: any) => t.isActive);;
+    this.datadichvuFilter=[...a];
+   }
+   else if(event.value.value===2){
+    this.datadichvuFilter  = this.datadichvu.filter((t: any) => t.isActive == false );
+    const b=this.datadichvu.filter((t: any) => t.isActive == false );;
+    this.datadichvuFilter= [...b]
+   }
+  }

@@ -1,0 +1,22 @@
+http sửa: cần 2 tham số là id  và data
+import thư viện ActiveRouter 
+.html
+
+<button routerlink="/đường link thêm/{{pro.id}}" (click)=(onEdit(pro))> Sửa</button>
+
+.ts
+
+  id:number=0
+contructor(private _router:ActivateRouter)
+ ngOnInit(){
+  this.id=this_router.snapshot.params.id// lấy id trên thanh url
+//Gọi api xem chi tiết để hiện thông tin trên form
+}
+
+.service
+
+onEdit(id:number, data:any): Observable<any>{
+ return this.http.put<any>('',data)
+}
+
+=>  dạng trùng id => chuẩn bị

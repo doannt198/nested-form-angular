@@ -46,7 +46,7 @@ export class MenuComponent implements OnInit {
       { 
         label: 'Test',
         icon: 'pi pi-book',
-        routerLink: '/array',
+        routerLink: '/test-component',
       },
       { 
         label: 'Chart.js',

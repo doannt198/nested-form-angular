@@ -1,0 +1,32 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { ContactComponent } from './contact/contact.component';
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+const routerConfig: Routes = [
+    { path: '', redirectTo:'\contacts' ,pathMatch:'full' }, // mặc định không gõ gì sẽ hiện ra component contact
+    { path: 'contacts', component: ContactComponent }, {
+      path: 'detail', component: ContactDetailComponent
+    },
+    { path: '**', component: PageNotFoundComponent } // gõ vào đường dẫn bất kì sẽ hiện thông báo trang không tồn tại
+  ]
+@NgModule({
+    imports: [
+        RouterModule.forRoot(routerConfig),
+      ],
+    declarations: [
+      ContactComponent,
+      ContactDetailComponent,
+      PageNotFoundComponent
+    ],
+      exports:[RouterModule]
+    })
+    export class AppRoutingModule { }
+
+router:
+  this.router.navigate(['/cai-dat/cai-dat-cong-ty/chi-tiet-cong-ty'], { queryParams: params }); 
+
+navigateByUrl:
+ this.router.navigateByUrl('/chinh-sach/bieu-mau');
