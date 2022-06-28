@@ -15,10 +15,18 @@ export class LoginComponent implements OnInit {
     username: '', 
     password: ''
   }
+  public error : number = 0
   submited = false
   ngOnInit(): void {
-
+    this.checkLogin()
   }
+
+  checkLogin() {
+    if(localStorage.getItem('user')) {
+
+    }
+  }
+
   onLogin(submitForm: any) {
    this.submited = true
     if(submitForm.invalid) {
@@ -27,7 +35,8 @@ export class LoginComponent implements OnInit {
     if(this.user.username == "admin" && this.user.password == "admin") {
       localStorage.setItem('user', JSON.stringify(this.user))
       this.messageService.add({severity: 'success', summary: 'Thông báo', detail: 'Đăng nhập thành công'})
-      console.log(this.user)
+    } else {
+      this.error = -1
     }
   }
 }
