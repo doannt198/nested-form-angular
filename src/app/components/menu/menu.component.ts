@@ -53,6 +53,11 @@ export class MenuComponent implements OnInit {
         icon: 'pi pi-chart-bar',
         routerLink: '/chart',
       },
+      { 
+        label: 'Library',
+        icon: 'pi pi-image',
+        routerLink: '/thu-vien-anh',
+      },
     ];
   }
   
