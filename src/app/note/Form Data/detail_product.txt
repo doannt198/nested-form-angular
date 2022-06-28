@@ -1,0 +1,12 @@
+** Chi tiết sản phẩm:
+1. Thêm :id vào đôi đường dẫn Path trong file routing VD:  path: 'customer-detail/:id'
+2. Thêm id vào cuối routerLinh để lấy id trên thanh URl vd: routerLink="/chi-tiet-voucher/{{item?.id}}
+3. Import import { ActivatedRoute } from '@angular/router';
+3.1 . Khai báo bên trong contructor
+4. Bên trong ngOnInit() --> this.id = this.route.snapshot.params.id ( Nhớ khai báo id: number;
+  detail: any;)
+5. Gọi api getdeail truyền id -->  this.VoucherService.getVoucherdetail(this.id).subscribe((response: any) => {
+      this.detail = response.data;
+
+
+ 

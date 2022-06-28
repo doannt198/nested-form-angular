@@ -1,0 +1,17 @@
+Sử dụng thư viện NgxSpinnerService
+1 Import thư viện import { NgxSpinnerService } from 'ngx-spinner';
+2. Import vào contructor  private spinner: NgxSpinnerService
+
+3 getCards(): void {
+    const params = queryString.stringify(this.queries);
+    this.spinner.show(); // 1
+    this.apiService.getCards(params).pipe(
+      finalize(() => this.spinner.hide()) // 2
+    ).subscribe(
+      response => {
+        this.projects=response.data.orders.data
+        console.log(this.projects)
+        this.spinner.hide(); // 3
+      }
+    )
+  }

@@ -1,0 +1,50 @@
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+    novalidate>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required minlength="5" maxlength="10"/>
+        <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+            <div *ngIf="firstName?.errors?.['required']">First Name is required</div>
+            <span *ngIf="firstName?.errors?.['minlength']" class="error-msg" >
+             Nhập tối thiểu 3 ký tự trở lên
+           </span>
+        </div>
+    </div>  
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required minlength="5" />
+        <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+            <div *ngIf="lastName?.errors?.['required']">Last Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email minlength="5"/>
+        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email?.errors?.['required']">Nhập Email </div>
+            <div *ngIf="email.errors?.['email']">Sai định dạng email</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Register</button>
+    </div>
+</form>
+
+
+-- Trong file a.component.ts 
+
+
+submitted = false;
+
+  model: any = {
+    firstName: '',
+    lastName: '',
+    email: ''
+  };
+
+  onSubmit() {
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model));
+  }

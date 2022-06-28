@@ -1,0 +1,5 @@
+sử dung dialog <p-dialog [(visible)] = "showDialog">
+	<component *ngIf= "showDialog" > </component>
+</p-dialog>
+
+=> để khi chọn nó sẽ load lại về mặc định
