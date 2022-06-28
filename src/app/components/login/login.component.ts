@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    if(sessionStorage.getItem('user')) {
-      this.router.navigate(['them-san-pham'])
+    if(localStorage.getItem('user')) {
+      this.router.navigate(['thu-vien'])
     }
   }
 
@@ -35,9 +35,8 @@ export class LoginComponent implements OnInit {
       return 
     }
     if(this.user.username == "admin" && this.user.password == "admin") {
-      sessionStorage.setItem('user', JSON.stringify(this.user))
+      localStorage.setItem('user', JSON.stringify(this.user))
       this.messageService.add({severity: 'success', summary: 'Thông báo', detail: 'Đăng nhập thành công'})
-      this.router.navigate(['thu-vien'])
     } else {
       this.error = -1
     }

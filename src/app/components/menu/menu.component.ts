@@ -65,7 +65,7 @@ export class MenuComponent implements OnInit {
   }
   
   logOut() {
-    sessionStorage.removeItem('user')
+    localStorage.removeItem('user')
     this.router.navigate(['login'])
     this.visibleSidebar1 =false
   }
