@@ -20,12 +20,14 @@ export class ArrayComponent implements OnInit {
     info: '',
     password: '',
   };
+
   filterItem: any;
   status: any = [
     { lable: 'Tất cả', value: 1 },
     { lable: 'Loại 1', value: 2 },
     { lable: 'Loại 2', value: 3 },
   ];
+
   data: any = [
     { name: 'A', age: 20, status: true },
     { name: 'B', age: 21, status: true },
@@ -35,6 +37,7 @@ export class ArrayComponent implements OnInit {
     { name: 'F', age: 19, status: true },
     { name: 'G', age: 21, status: false },
   ];
+  
   ngOnInit(): void {}
 
   set(): void {
