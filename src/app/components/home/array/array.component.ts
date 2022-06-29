@@ -20,7 +20,7 @@ export class ArrayComponent implements OnInit {
     info: '',
     password: '',
   };
-
+  Urlimage: any
   filterItem: any;
   status: any = [
     { lable: 'Tất cả', value: 1 },
@@ -37,15 +37,31 @@ export class ArrayComponent implements OnInit {
     { name: 'F', age: 19, status: true },
     { name: 'G', age: 21, status: false },
   ];
-  
-  ngOnInit(): void {}
+
+  info: any = [
+    { name: 'A', age: 20, status: true },
+    { name: 'B', age: 21, status: true },
+    { name: 'C', age: 22, status: false },
+    { name: 'D', age: 25, status: true },
+    { name: 'E', age: 29, status: false },
+    { name: 'F', age: 19, status: true },
+    { name: 'G', age: 21, status: false },
+  ];
+  showDisplay:boolean = false
+  ngOnInit(): void {
+    
+  }
+
+  showDialog() {
+    this.showDisplay = true
+  }
 
   set(): void {
     localStorage.setItem('user', JSON.stringify(this.user));
     this.messageService.add({
       severity: 'success',
       summary: 'Thông báo',
-      detail: 'Thêm',
+      detail: 'Thêm'
     });
   }
 
@@ -54,8 +70,15 @@ export class ArrayComponent implements OnInit {
     this.messageService.add({
       severity: 'error',
       summary: 'Thông báo',
-      detail: 'Xoá',
+      detail: 'Xoá'
     });
+  }
+
+  handle(): void {
+      const index = this.info.map((element:any) => 
+       element
+      );
+      console.log("indexx", index[0])
   }
 
   handleChange(event: any): void {
@@ -71,5 +94,14 @@ export class ArrayComponent implements OnInit {
       this.filterItem = this.data.filter((t: any) => t.status == false);
       console.log(event.value);
     }
+  }
+
+  handlSelectImage(event: any): void {
+    this.showDisplay = false
+    this.Urlimage = event 
+  }
+
+  xoaAnh() {
+    this.Urlimage = null
   }
 }
