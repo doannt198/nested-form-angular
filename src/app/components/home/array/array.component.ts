@@ -104,7 +104,6 @@ export class ArrayComponent implements OnInit {
       const data = response.data
       this.loopEveryNodeTree(data);
       this.convertTree = data
-      
     })
   }
 
@@ -141,14 +140,10 @@ export class ArrayComponent implements OnInit {
     console.log('event', event.value);
     if (event.value === 1) {
       this.filterItem = this.data;
-      console.log(event.value);
     } else if (event.value === 2) {
       this.filterItem = this.data.filter((t: any) => t.status == true);
-      console.log('filter true', this.filterItem);
-      console.log(event.value);
     } else if (event.value === 3) {
       this.filterItem = this.data.filter((t: any) => t.status == false);
-      console.log(event.value);
     }
   }
 
@@ -160,6 +155,7 @@ export class ArrayComponent implements OnInit {
   xoaAnh() {
     this.Urlimage = null
   }
+  
   submited = false
   submit() {
     this.submited = true
