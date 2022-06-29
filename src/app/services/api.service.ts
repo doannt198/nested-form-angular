@@ -51,7 +51,7 @@ export class ApiService {
     return this.http.post(`${hhqapi}/api/Library`, data)
   }
 
-/*   getFormType(): Observable<any> {
-    return this.http.get(`${hrmapi}/api/v2/form/GetFormTypes`)
-  }  */
+  getListTree(): Observable<any> {
+    return this.http.get('./../../assets/tree.json')
+  }
 }

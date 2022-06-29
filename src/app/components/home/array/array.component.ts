@@ -19,7 +19,9 @@ export class ArrayComponent implements OnInit {
   user: any = {
     info: '',
     password: '',
+    tree: null
   };
+  tree: any;
   Urlimage: any
   filterItem: any;
   status: any = [
@@ -62,10 +64,15 @@ export class ArrayComponent implements OnInit {
   }
 
   feathData(): void {
-   
+   this.getTree()
   }
 
-  
+  getTree():void {
+    this.apiService.getListTree()
+    .subscribe(response=> {
+      this.tree = response.data
+    })
+  }
 
   showDialog() {
     this.showDisplay = true
