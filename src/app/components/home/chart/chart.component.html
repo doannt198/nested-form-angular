@@ -3,12 +3,13 @@
         <div class="col-4">
             <p-organizationChart [value]="data" selectionMode="single"  [(selection)]="selectOrganze" (onNodeSelect)="onNodeSelect($event)"></p-organizationChart>
             {{selectOrganze| json}}
+            <button pButton pRipple type="button" label="show" class="p-button-outlined p-button-rounded p-button-secondary" (click)="handleShow()"></button>
         </div>
         <div class="col-4">
-
+           
         </div>
         <div class="col-4">
-
+            
         </div>
     </div>
 </div>

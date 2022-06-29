@@ -62,4 +62,8 @@ export class ApiService {
   getOrganizeChar(): Observable<any> {
     return this.http.get('./../../assets/orchar.json')
   }
+
+  getAutoComplete(): Observable<any> {
+    return this.http.get('./../../assets/autocomplate.json')
+  }
 }

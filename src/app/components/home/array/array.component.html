@@ -19,6 +19,15 @@
                 <div class="col-4">
                     <p-password [(ngModel)]="user.password" class="ml-4" [toggleMask]="true"></p-password>
                 </div>
+                <div class="mt-3">
+                <p-autoComplete [(ngModel)]="selectItem" [suggestions]="results" (completeMethod)="search($event)">
+                    <ng-template let-results pTemplate="item">
+                        <div class="country-item">
+                          <div>{{results.name}}</div>
+                        </div>
+                      </ng-template>
+                </p-autoComplete>
+                </div>
             </div>
         </div>
         <div class="col-3 mt-8">
@@ -50,6 +59,7 @@
             <div class="mt-3">
                 <p-treeSelect [(ngModel)]="user.cvTree" [options]="convertTree" placeholder="Select Item"></p-treeSelect>
             </div>
+            >
         </div>
     </div>
 </div>

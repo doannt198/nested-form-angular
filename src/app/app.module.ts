@@ -48,6 +48,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { PasswordModule } from 'primeng/password';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { OrganizationChartModule } from 'primeng/organizationchart';
+
 @NgModule({
   declarations: [
     AppComponent,

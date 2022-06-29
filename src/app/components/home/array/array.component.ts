@@ -27,6 +27,8 @@ export class ArrayComponent implements OnInit {
   convertTree: any
   Urlimage: any
   filterItem: any;
+  selectItem: any;
+  results: any;
   status: any = [
     { lable: 'Tất cả', value: 1 },
     { lable: 'Loại 1', value: 2 },
@@ -69,6 +71,7 @@ export class ArrayComponent implements OnInit {
   feathData(): void {
    this.getTree();
    this.getConvertTree();
+   this.getAutoCompete()
   }
 
   getTree():void {
@@ -161,4 +164,17 @@ export class ArrayComponent implements OnInit {
     const infomation = {...this.user, urlimage : this.Urlimage }
     console.log("dataSave", infomation)
   }
+
+/*   autoComplete */
+ search(event:any):void {
+    const query = event.query
+    console.log('event', event.query)
+   
+ }
+
+ getAutoCompete(): void {
+   this.apiService.getAutoComplete().subscribe((response)=>
+     this.results = response.data
+   )
+ }
 }
