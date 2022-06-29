@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { ConfirmationService, MessageService, PrimeNGConfig, TreeNode } from 'primeng/api';
 import { LibraryFormModel, LibraryModel } from 'src/app/model/library.model';
 import { Subject, takeUntil } from 'rxjs';
+import { ForderModel } from 'src/app/model/forder.model';
 @Component({
   selector: 'app-thu-vien-anh',
   templateUrl: './thu-vien-anh.component.html',
@@ -25,11 +26,13 @@ export class ThuVienAnhComponent implements OnInit {
   listFile: any;
   items:any
   roots: any;
+  forder: any;
   selectNote: any;
   selectedFile: TreeNode;
   selectedNodes: any;
   displayModal = false
   imageUrl = '';
+  dataAddForder: ForderModel = new ForderModel()
   file: any = null;
   display: boolean = false;
   infoImage: LibraryFormModel = new LibraryFormModel();
@@ -47,6 +50,10 @@ export class ThuVienAnhComponent implements OnInit {
   fetchData(): void {
     this.getLibrariesFolder();
     this.getSelectNode();
+  }
+
+  onShowDialog() {
+    this.displayModal = true
   }
 
   getLibrariesFolder(): void {
@@ -211,6 +218,12 @@ export class ThuVienAnhComponent implements OnInit {
     this.selecteImg.emit(item.Url)
   }
   
+  addForder(): void {
+    const dataSave = {...this.dataAddForder, Name: this.forder }
+    this.apiService.setForderLibrary(dataSave).subscribe((response)=> {
+        console.log("reponse",response)
+    })
+  }
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();

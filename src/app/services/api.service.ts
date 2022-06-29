@@ -31,6 +31,23 @@ export class ApiService {
     return this.http.post<any>(`${urlApi}/products/edit`,data)
   }
 
+  getListTree(): Observable<any> {
+    return this.http.get('./../../assets/tree.json')
+  }
+
+  getConvertTree(): Observable<any> {
+    return this.http.get('./../../assets/converttree.json')
+  }
+
+  getOrganizeChar(): Observable<any> {
+    return this.http.get('./../../assets/orchar.json')
+  }
+
+  getAutoComplete(): Observable<any> {
+    return this.http.get('./../../assets/autocomplate.json')
+  }
+
+   /* APi học hiệu quả */
   getListSlide(queryParams: any):Observable<any> {
     return this.http.get<any>(`${hhqapi}/api/Slide?`+ queryParams)
   }
@@ -51,19 +68,7 @@ export class ApiService {
     return this.http.post(`${hhqapi}/api/Library`, data)
   }
 
-  getListTree(): Observable<any> {
-    return this.http.get('./../../assets/tree.json')
-  }
-
-  getConvertTree(): Observable<any> {
-    return this.http.get('./../../assets/converttree.json')
-  }
-
-  getOrganizeChar(): Observable<any> {
-    return this.http.get('./../../assets/orchar.json')
-  }
-
-  getAutoComplete(): Observable<any> {
-    return this.http.get('./../../assets/autocomplate.json')
+  setForderLibrary(data: any): Observable<any> {
+    return this.http.post(`${hhqapi}/api/Library`, data)
   }
 }

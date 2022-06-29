@@ -48,6 +48,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { PasswordModule } from 'primeng/password';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { OrganizationChartModule } from 'primeng/organizationchart';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { OrganizationChartModule } from 'primeng/organizationchart';
     OrganizationChartModule,
     TreeModule,
     PasswordModule,
+    InputTextModule,
     ContextMenuModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
