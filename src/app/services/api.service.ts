@@ -54,4 +54,8 @@ export class ApiService {
   getListTree(): Observable<any> {
     return this.http.get('./../../assets/tree.json')
   }
+
+  getConvertTree(): Observable<any> {
+    return this.http.get('./../../assets/converttree.json')
+  }
 }

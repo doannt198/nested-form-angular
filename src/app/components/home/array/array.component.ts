@@ -19,9 +19,11 @@ export class ArrayComponent implements OnInit {
   user: any = {
     info: '',
     password: '',
-    tree: null
+    tree: null,
+    cvTree: null
   };
   tree: any;
+  convertTree: any
   Urlimage: any
   filterItem: any;
   status: any = [
@@ -64,13 +66,45 @@ export class ArrayComponent implements OnInit {
   }
 
   feathData(): void {
-   this.getTree()
+   this.getTree();
+   this.getConvertTree();
   }
 
   getTree():void {
     this.apiService.getListTree()
     .subscribe(response=> {
       this.tree = response.data
+    })
+  }
+  
+  getNode(item: any) {
+    return {
+      label: item.formTypeName || item.formTypeId,
+      data: item.formTypeId,
+      expandedIcon: "pi pi-folder-open",
+      collapsedIcon: "pi pi-folder",
+      children: item.children
+    };
+  }
+  
+  loopEveryNodeTree(list: any): void {
+    for (let i = 0; i < list.length; i++) {
+        if (Array.isArray(list[i].children) && list[i].children.length) {
+          list[i] = this.getNode(list[i]);
+          this.loopEveryNodeTree(list[i].children);
+        } else {
+          list[i] = this.getNode(list[i]);
+        }
+    }
+  }
+
+  getConvertTree():void {
+    this.apiService.getConvertTree()
+    .subscribe(response => {
+      const data = response.data
+      this.loopEveryNodeTree(data);
+      this.convertTree = data
+      
     })
   }
 

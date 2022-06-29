@@ -1,0 +1,58 @@
+{
+    "statusCode": 1,
+    "message": "success",
+    "status": "success",
+    "data": [
+      {
+        "formTypeId": "8a9bdc29-5c0c-49d7-bd86-1686781c4658",
+        "formTypeCd": "888",
+        "formTypeName": "888",
+        "parentId": null,
+        "children": []
+      },
+      {
+        "formTypeId": "765308b7-fa5d-4855-84f1-3f7dbb4c5a68",
+        "formTypeCd": "ABC123",
+        "formTypeName": "asdfghhj",
+        "parentId": "bdb107d6-5dba-4b9b-8bf3-d9899c1d38ca",
+        "children": []
+      },
+      {
+        "formTypeId": "ec9ca1ea-3a11-4751-b5d6-b817a212d1ae",
+        "formTypeCd": "6",
+        "formTypeName": "7",
+        "parentId": "bdb107d6-5dba-4b9b-8bf3-d9899c1d38ca",
+        "children": []
+      },
+      {
+        "formTypeId": "bdb107d6-5dba-4b9b-8bf3-d9899c1d38ca",
+        "formTypeCd": "BM001",
+        "formTypeName": "abc",
+        "parentId": null,
+        "children": [
+          {
+            "formTypeId": "765308b7-fa5d-4855-84f1-3f7dbb4c5a68",
+            "formTypeCd": "ABC123",
+            "formTypeName": "asdfghhj",
+            "parentId": "bdb107d6-5dba-4b9b-8bf3-d9899c1d38ca",
+            "children": []
+          },
+          {
+            "formTypeId": "ec9ca1ea-3a11-4751-b5d6-b817a212d1ae",
+            "formTypeCd": "6",
+            "formTypeName": "7",
+            "parentId": "bdb107d6-5dba-4b9b-8bf3-d9899c1d38ca",
+            "children": []
+          }
+        ]
+      },
+      {
+        "formTypeId": "3d27a44c-99af-4699-9c3e-e105c3c7c594",
+        "formTypeCd": "test",
+        "formTypeName": "test",
+        "parentId": null,
+        "children": []
+      }
+    ],
+    "error": null
+  }
