@@ -58,4 +58,8 @@ export class ApiService {
   getConvertTree(): Observable<any> {
     return this.http.get('./../../assets/converttree.json')
   }
+
+  getOrganizeChar(): Observable<any> {
+    return this.http.get('./../../assets/orchar.json')
+  }
 }

@@ -47,6 +47,7 @@ import { AuthGuardGuard } from './services/auth-guard.guard';
 import { DropdownModule } from 'primeng/dropdown';
 import { PasswordModule } from 'primeng/password';
 import { TreeSelectModule } from 'primeng/treeselect';
+import { OrganizationChartModule } from 'primeng/organizationchart';
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +89,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
     AgGridModule,
     ToastModule,
     DropdownModule,
+    OrganizationChartModule,
     TreeModule,
     PasswordModule,
     ContextMenuModule,
