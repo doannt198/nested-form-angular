@@ -1,10 +1,11 @@
 <div class="char">
     <div class="grid">
         <div class="col-4">
-            <p-organizationChart [value]="data"></p-organizationChart>
+            <p-organizationChart [value]="data" selectionMode="single"  [(selection)]="selectOrganze" (onNodeSelect)="onNodeSelect($event)"></p-organizationChart>
+            {{selectOrganze| json}}
         </div>
         <div class="col-4">
-            
+
         </div>
         <div class="col-4">
 

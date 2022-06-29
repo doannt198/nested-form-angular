@@ -8,6 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ChartComponent implements OnInit {
   data: TreeNode[];
+  selectOrganze: any;
   constructor(
     private apiService: ApiService
   ) { }
@@ -27,5 +28,7 @@ export class ChartComponent implements OnInit {
         this.data = response.data
     })
   }
-  
+  onNodeSelect(event: any): void {
+      console.log("event", event.node.label)
+  }
 } 
