@@ -155,9 +155,10 @@ export class ArrayComponent implements OnInit {
   xoaAnh() {
     this.Urlimage = null
   }
-  
+
   submited = false
   submit() {
     this.submited = true
+    
   }
 }
