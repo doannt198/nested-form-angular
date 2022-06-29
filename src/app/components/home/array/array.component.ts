@@ -137,7 +137,6 @@ export class ArrayComponent implements OnInit {
   }
 
   handleChange(event: any): void {
-  
     if (event.value === 1) {
       this.filterItem = this.data;
     } else if (event.value === 2) {

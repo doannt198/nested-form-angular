@@ -39,7 +39,7 @@
             <img [src]="Urlimage || 'https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png'" alt="empty" style="width:200px" class="text-center">
             <small [ngStyle]="{'color':'red'}" *ngIf="submited && Urlimage == null">Chọn hình ảnh</small>
              <!--     validator for images -->
-            <p-button (click)="xoaAnh()"  label="xoá lựa chọn" [disabled]="Urlimage==null ? true : false" ></p-button>
+            <p-button (click)="xoaAnh()" label="xoá lựa chọn" [disabled]="Urlimage==null ? true : false" ></p-button>
             <div class="mt-3">
                 <p-button (click)="submit()" label="gửi" ></p-button>
             </div> 
