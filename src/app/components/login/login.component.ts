@@ -20,24 +20,24 @@ export class LoginComponent implements OnInit {
   public error : number = 0
   submited = false
   ngOnInit(): void {
-    this.checkLogin();
+    /* this.checkLogin(); */
   }
 
-   checkLogin() {
+   /* checkLogin() {
     if(localStorage.getItem('user')) {
       this.router.navigate(['thu-vien'])
     }
-  } 
+  }  */
 
   onLogin(submitForm: any) {
    this.submited = true
     if(submitForm.invalid) {
       return 
     }
-    if(this.user.username =='admin' && this.user.password =='123') {
+   /*  if(this.user.username =='admin' && this.user.password =='123') {
       localStorage.setItem('user', JSON.stringify(this.user))
     } else {
       this.error = -1
-    }
+    } */
   }
 }

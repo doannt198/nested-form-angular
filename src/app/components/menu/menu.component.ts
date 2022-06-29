@@ -17,49 +17,49 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.items = [ 
       {
-        label: 'Reactive Form',
+        label: 'Reactive-Form-Dynamic',
         icon: 'pi pi-cog',
-        routerLink: '/reactive-form',
+        routerLink: '/home/reactive-form',
       },
       {
-        label: 'Template Drien Form',
+        label: 'Template-Drien-Form-Dynamic',
         icon: 'pi pi-car',
-        routerLink: '/template-driven-form',
+        routerLink: '/home/template-driven-form',
       },
       {
-        label: 'Template Drien Form Hai',
+        label: 'Template-Drien-Form-2',
         icon: 'pi pi-chart-bar',
-        routerLink: '/tempalte-driven-form-hai',
+        routerLink: '/home/tempalte-driven-form-hai',
       },
       {
-        label: 'Reactive Form Hai',
+        label: 'Reactive-Form-Hai',
         icon: 'pi pi-calendar-minus',
-        routerLink: '/reactive-form-hai',
+        routerLink: '/home/reactive-form-hai',
       },
       {
-        label: 'Form Thêm sản phẩm',
+        label: 'Thêm sản phẩm',
         icon: 'pi pi-bell',
-        routerLink: '/them-san-pham',
+        routerLink: '/home/them-san-pham',
       },
       {
         label: 'Thư viện',
         icon: 'pi pi-globe',
-        routerLink: '/object',
+        routerLink: '/home/object',
       },
       { 
         label: 'Test',
         icon: 'pi pi-book',
-        routerLink: '/test-component',
+        routerLink: '/home/test-component',
       },
       { 
         label: 'Chart.js',
         icon: 'pi pi-chart-bar',
-        routerLink: '/chart',
+        routerLink: '/home/chart',
       },
       { 
         label: 'Library',
         icon: 'pi pi-image',
-        routerLink: '/thu-vien',
+        routerLink: '/home/thu-vien',
       },
     ];
   }
