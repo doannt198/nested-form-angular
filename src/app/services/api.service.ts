@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 const urlApi="https://tano-api.herokuapp.com"
 const hhqapi="https://hhq.somee.com"
+const hrmapi="https://apihrm.sunshinetech.com.vn"
 @Injectable({
   providedIn: 'root'
 })
@@ -49,4 +50,8 @@ export class ApiService {
   uploadFile(data :any): Observable<any> {
     return this.http.post(`${hhqapi}/api/Library`, data)
   }
+
+/*   getFormType(): Observable<any> {
+    return this.http.get(`${hrmapi}/api/v2/form/GetFormTypes`)
+  }  */
 }

@@ -46,6 +46,7 @@ import { environment } from 'src/environments/environment';
 import { AuthGuardGuard } from './services/auth-guard.guard';
 import { DropdownModule } from 'primeng/dropdown';
 import { PasswordModule } from 'primeng/password';
+import { TreeSelectModule } from 'primeng/treeselect';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +95,7 @@ import { PasswordModule } from 'primeng/password';
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFirestoreModule,
+    TreeSelectModule
   ],
   providers: [ConfirmationService, MessageService, AuthGuardGuard],
   bootstrap: [AppComponent],

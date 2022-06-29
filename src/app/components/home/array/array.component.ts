@@ -58,7 +58,14 @@ export class ArrayComponent implements OnInit {
       { name: 'F', age: 19, status: true },
       { name: 'G', age: 21, status: false },
     ];
+    this.feathData();
   }
+
+  feathData(): void {
+   
+  }
+
+  
 
   showDialog() {
     this.showDisplay = true
