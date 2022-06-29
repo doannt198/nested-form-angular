@@ -9,60 +9,64 @@ import { join } from 'path';
   selector: 'app-array',
   templateUrl: './array.component.html',
   styleUrls: ['./array.component.scss'],
- 
 })
 export class ArrayComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private messageService: MessageService,
     private router: ActivatedRoute
-    ) {}
-  user:any = {
-    info : '',
-    password: ''
-  }
-  filterItem: any 
-  status:any = [
-    { lable: 'Tất cả', value: 1},
-    { lable: 'Loại 1', value: 2},
-    { lable: 'Loại 2', value: 3},
-  ]
+  ) {}
+  user: any = {
+    info: '',
+    password: '',
+  };
+  filterItem: any;
+  status: any = [
+    { lable: 'Tất cả', value: 1 },
+    { lable: 'Loại 1', value: 2 },
+    { lable: 'Loại 2', value: 3 },
+  ];
   data: any = [
-    {name:'A', age: 20, status: true},
-    {name:'B', age: 21, status: true},
-    {name:'C', age: 22, status: false},
-    {name:'D', age: 25, status: true},
-    {name:'E', age: 29, status: false},
-    {name:'F', age: 19, status: true},
-    {name:'G', age: 21, status: false},
-  ]
-  ngOnInit(): void {
-    
-  }
+    { name: 'A', age: 20, status: true },
+    { name: 'B', age: 21, status: true },
+    { name: 'C', age: 22, status: false },
+    { name: 'D', age: 25, status: true },
+    { name: 'E', age: 29, status: false },
+    { name: 'F', age: 19, status: true },
+    { name: 'G', age: 21, status: false },
+  ];
+  ngOnInit(): void {}
 
   set(): void {
-    localStorage.setItem('user', JSON.stringify(this.user))
-    this.messageService.add({severity:'success', summary: 'Thông báo', detail:"Thêm"})
+    localStorage.setItem('user', JSON.stringify(this.user));
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Thông báo',
+      detail: 'Thêm',
+    });
   }
 
   remove(): void {
-    localStorage.removeItem('user')
-    this.messageService.add({severity:'error', summary: 'Thông báo', detail:"Xoá"})
-  } 
+    localStorage.removeItem('user');
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Thông báo',
+      detail: 'Xoá',
+    });
+  }
 
   handleChange(event: any): void {
-    console.log("event", event.value)
-    if(event.value === 1) {
-        this.filterItem = this.data
-        console.log(event.value)
+    console.log('event', event.value);
+    if (event.value === 1) {
+      this.filterItem = this.data;
+      console.log(event.value);
     } else if (event.value === 2) {
-        this.filterItem = this.data.filter((t:any) => t.status == true)
-        console.log("filter true", this.filterItem)
-        console.log(event.value)
-    }
-     else if (event.value === 3) {
-      this.filterItem = this.data.filter((t:any) => t.status == false)
-      console.log(event.value)
+      this.filterItem = this.data.filter((t: any) => t.status == true);
+      console.log('filter true', this.filterItem);
+      console.log(event.value);
+    } else if (event.value === 3) {
+      this.filterItem = this.data.filter((t: any) => t.status == false);
+      console.log(event.value);
     }
   }
 }
