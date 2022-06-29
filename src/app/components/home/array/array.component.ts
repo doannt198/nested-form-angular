@@ -28,7 +28,7 @@ export class ArrayComponent implements OnInit {
     { lable: 'Loại 2', value: 3 },
   ];
 
-  data: any = [
+  data: any /* = [
     { name: 'A', age: 20, status: true },
     { name: 'B', age: 21, status: true },
     { name: 'C', age: 22, status: false },
@@ -36,7 +36,7 @@ export class ArrayComponent implements OnInit {
     { name: 'E', age: 29, status: false },
     { name: 'F', age: 19, status: true },
     { name: 'G', age: 21, status: false },
-  ];
+  ]; */
 
   info: any = [
     { name: 'A', age: 20, status: true },
@@ -49,7 +49,15 @@ export class ArrayComponent implements OnInit {
   ];
   showDisplay:boolean = false
   ngOnInit(): void {
-    
+   this.data = [
+      { name: 'A', age: 20, status: true },
+      { name: 'B', age: 21, status: true },
+      { name: 'C', age: 22, status: false },
+      { name: 'D', age: 25, status: true },
+      { name: 'E', age: 29, status: false },
+      { name: 'F', age: 19, status: true },
+      { name: 'G', age: 21, status: false },
+    ];
   }
 
   showDialog() {
@@ -73,7 +81,7 @@ export class ArrayComponent implements OnInit {
       detail: 'Xoá'
     });
   }
-
+  
   handle(): void {
       const index = this.info.map((element:any) => 
        element
@@ -103,5 +111,9 @@ export class ArrayComponent implements OnInit {
 
   xoaAnh() {
     this.Urlimage = null
+  }
+  submited = false
+  submit() {
+    this.submited = true
   }
 }
