@@ -20,7 +20,8 @@ export class ArrayComponent implements OnInit {
     info: '',
     password: '',
     tree: null,
-    cvTree: null
+    cvTree: null, 
+    urlimage: ''
   };
   tree: any;
   convertTree: any
@@ -133,11 +134,10 @@ export class ArrayComponent implements OnInit {
       const index = this.info.map((element:any) => 
        element
       );
-      console.log("indexx", index[0])
   }
 
   handleChange(event: any): void {
-    console.log('event', event.value);
+  
     if (event.value === 1) {
       this.filterItem = this.data;
     } else if (event.value === 2) {
@@ -159,6 +159,7 @@ export class ArrayComponent implements OnInit {
   submited = false
   submit() {
     this.submited = true
-    
+    const infomation = {...this.user, urlimage : this.Urlimage }
+    console.log("dataSave", infomation)
   }
 }

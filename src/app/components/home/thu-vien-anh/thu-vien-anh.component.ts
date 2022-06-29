@@ -52,7 +52,7 @@ export class ThuVienAnhComponent implements OnInit {
   getLibrariesFolder(): void {
     this.apiService.getLibrariesFolder().subscribe({
       next: (response) => {
-        console.log('data', response);
+        
         this.list = response.Data.Data;
         this.convertJsonToStructTree(this.list)
       },
@@ -94,7 +94,6 @@ export class ThuVienAnhComponent implements OnInit {
     roots = roots.map((item) => {
       return this.bindingData(item);
     });
-    console.log('rooots:', roots);
     this.roots = roots
   }
 
@@ -145,7 +144,6 @@ export class ThuVienAnhComponent implements OnInit {
         this.apiService.deleteLibrariesFile(item.Id)
         .subscribe({
           next: (response) => {
-            console.log("ss", response)
             if(response.Status === 'success') {
               this.messageService.add({severity: 'success', summary: 'Thông báo', detail: 'Xoá thành công'})
               this.fileUploadService.deleteFileStorage(item.Path);
@@ -177,9 +175,7 @@ export class ThuVienAnhComponent implements OnInit {
           })
       });
   }
-
- 
-
+  
   onFileChanged(event: any) {
     this.file = event.target.files[0];
     let reader: any = new FileReader();
