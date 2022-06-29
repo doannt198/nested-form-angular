@@ -54,7 +54,7 @@ export class ArrayComponent implements OnInit {
     { name: 'F', age: 19, status: true },
     { name: 'G', age: 21, status: false },
   ];
-  showDisplay:boolean = false
+  showDisplay: boolean = false
   ngOnInit(): void {
    this.data = [
       { name: 'A', age: 20, status: true },
