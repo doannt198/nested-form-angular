@@ -44,6 +44,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
 import { AuthGuardGuard } from './services/auth-guard.guard';
+import { DropdownModule } from 'primeng/dropdown';
+import { PasswordModule } from 'primeng/password';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +86,9 @@ import { AuthGuardGuard } from './services/auth-guard.guard';
     ConfirmDialogModule,
     AgGridModule,
     ToastModule,
+    DropdownModule,
     TreeModule,
+    PasswordModule,
     ContextMenuModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

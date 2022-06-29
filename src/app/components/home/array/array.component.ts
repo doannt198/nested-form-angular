@@ -3,6 +3,8 @@ import { ApiService } from 'src/app/services/api.service';
 import * as queryString from 'query-string';
 import { MessageService } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
+import { cloneDeep } from 'lodash';
+import { join } from 'path';
 @Component({
   selector: 'app-array',
   templateUrl: './array.component.html',
@@ -15,35 +17,52 @@ export class ArrayComponent implements OnInit {
     private messageService: MessageService,
     private router: ActivatedRoute
     ) {}
-  value = 0
-  dataSlide: any;
-  query:any = {
-    Screen: '', 
-    filter: '', 
-    offSet: 0,
-    pageSize: 10,
-  };
-  giatri:any;
-
+  user:any = {
+    info : '',
+    password: ''
+  }
+  filterItem: any 
+  status:any = [
+    { lable: 'Tất cả', value: 1},
+    { lable: 'Loại 1', value: 2},
+    { lable: 'Loại 2', value: 3},
+  ]
+  data: any = [
+    {name:'A', age: 20, status: true},
+    {name:'B', age: 21, status: true},
+    {name:'C', age: 22, status: false},
+    {name:'D', age: 25, status: true},
+    {name:'E', age: 29, status: false},
+    {name:'F', age: 19, status: true},
+    {name:'G', age: 21, status: false},
+  ]
   ngOnInit(): void {
-    this.getListSlide()
     
   }
-  
-  getListSlide(): void {
-    const queryParams = queryString.stringify(this.query)
-    this.apiService.getListSlide(queryParams).subscribe((reponse => {
-      this.dataSlide = reponse.Data.Data
-    }))
+
+  set(): void {
+    localStorage.setItem('user', JSON.stringify(this.user))
+    this.messageService.add({severity:'success', summary: 'Thông báo', detail:"Thêm"})
   }
 
-  onLoad(event:boolean): void {
-    this.getListSlide();
-    if(event == true) {
-      this.value = this.value + 1 
+  remove(): void {
+    localStorage.removeItem('user')
+    this.messageService.add({severity:'error', summary: 'Thông báo', detail:"Xoá"})
+  } 
+
+  handleChange(event: any): void {
+    console.log("event", event.value)
+    if(event.value === 1) {
+        this.filterItem = this.data
+        console.log(event.value)
+    } else if (event.value === 2) {
+        this.filterItem = this.data.filter((t:any) => t.status == true)
+        console.log("filter true", this.filterItem)
+        console.log(event.value)
     }
-    if(event == false) {
-      this.value = this.value - 1
+     else if (event.value === 3) {
+      this.filterItem = this.data.filter((t:any) => t.status == false)
+      console.log(event.value)
     }
   }
 }

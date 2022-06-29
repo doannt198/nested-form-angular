@@ -4,4 +4,34 @@
     </div>
     {{giatri |json}}
 </div> -->
+<div class="home">
+    <div class="grid">
+        <div class="col-3">
+            <div class="grid">
+                <div class="col-4">
+                    <button pButton pRipple type="button" label="set" class="p-button-raised p-button-text" (click)="set()"></button>
+                    <button pButton pRipple type="button" label="remove" class="p-button-raised p-button-text mt-3" (click)="remove()"></button>
+                </div>
+                <div class="col-4">
+                    <p-dropdown [options]="status" [(ngModel)]="user.info" optionLabel="lable" optionValue="value"  placeholder="Chọn...." (onChange)="handleChange($event)"></p-dropdown>
+                </div>
+                <div class="col-4">
+                    <p-password [(ngModel)]="user.password" class="ml-4" [toggleMask]="true"></p-password>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 mt-8">
+            <ul *ngFor="let item of filterItem">
+                <li>{{item?.name}}</li>
+                <li>{{item?.age}}</li>
+                <li>{{item?.status}}</li>
+            </ul>
+        </div>
+        <div class="col-3">
 
+        </div>
+        <div class="col-3">
+
+        </div>
+    </div>
+</div>
