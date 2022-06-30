@@ -49,6 +49,7 @@ import { PasswordModule } from 'primeng/password';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { OrganizationChartModule } from 'primeng/organizationchart';
 import { InputTextModule } from 'primeng/inputtext';
+import { ThemSuaSliderComponent } from './components/home/them-sua-slider/them-sua-slider.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { InputTextModule } from 'primeng/inputtext';
     LoginComponent,
     ThuVienAnhComponent,
     ThuVienComponent,
+    ThemSuaSliderComponent,
   ],
   imports: [
     BrowserModule,

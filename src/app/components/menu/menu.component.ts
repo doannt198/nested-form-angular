@@ -61,6 +61,11 @@ export class MenuComponent implements OnInit {
         icon: 'pi pi-image',
         routerLink: '/home/thu-vien',
       },
+      { 
+        label: 'Thêm sửa Slider',
+        icon: 'pi pi-image',
+        routerLink: '/home/them-sua-slider',
+      },
     ];
   }
   

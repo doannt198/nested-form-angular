@@ -11,6 +11,7 @@ import { ReactiveFormHaiComponent } from './components/home/reactive-form-hai/re
 import { ReactiveFormComponent } from './components/home/reactive-form/reactive-form.component';
 import { TemplateDrivenFormHaiComponent } from './components/home/template-driven-form-hai/template-driven-form-hai.component';
 import { TemplateDrivenFormComponent } from './components/home/template-driven-form/template-driven-form.component';
+import { ThemSuaSliderComponent } from './components/home/them-sua-slider/them-sua-slider.component';
 import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh.component';
 import { ThuVienComponent } from './components/home/thu-vien/thu-vien.component';
 import { LoginComponent } from './components/login/login.component';
@@ -82,6 +83,12 @@ const appRoutes: Routes = [
         component: ThuVienComponent,
         canActivate: [AuthGuardGuard]
       },
+      {
+        path: 'them-sua-slider',
+        component: ThemSuaSliderComponent,
+        canActivate: [AuthGuardGuard]
+      },
+
     ]
   }
  
