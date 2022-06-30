@@ -75,6 +75,10 @@ export class SlideFormComponent implements OnInit {
       },
     }); 
   }
+  
+  deleteOption() {
+    this.detail.ImageUrl = null
+  }
 
   showLibraryDialog(): void {
     this.showLibrary = true;
