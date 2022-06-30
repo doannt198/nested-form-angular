@@ -41,8 +41,8 @@ export class ThuVienAnhComponent implements OnInit {
     this.primengConfig.ripple = true;
     this.items = [
       { label: 'Thêm thư mục', icon: 'pi pi-folder'},
-      { label: 'Xoá folder', icon: 'pi pi-trash'},
-      { label: 'Thêm file', icon: 'pi pi-file', command: (event:any) => this.viewAddFile() },
+      { label: 'Xoá folder', icon: 'pi pi-trash', command:(event: any) => this.deleteForder() },
+      { label: 'Thêm file', icon: 'pi pi-file', command: (event: any) => this.viewAddFile() },
       { label: 'Sửa tên', icon: 'pi pi-pencil'}
     ]
   }
@@ -62,6 +62,7 @@ export class ThuVienAnhComponent implements OnInit {
         
         this.list = response.Data.Data;
         this.convertJsonToStructTree(this.list)
+        console.log("lis", this.list)
       },
       error: (error) => {
         console.log('error', error);
@@ -122,6 +123,7 @@ export class ThuVienAnhComponent implements OnInit {
     .subscribe({
       next: (response) => {
         this.listFile = response.Data.Data
+        console.log("listFile", this.listFile)
       },
       error: (error) => {
         console.log("error", error)
@@ -224,6 +226,20 @@ export class ThuVienAnhComponent implements OnInit {
         console.log("reponse", response)
     })
   }
+
+  deleteForder(): void {
+    
+    /* this.confirmationService.confirm({
+      message: 'Bạn chắc chắn muốn xoá?',
+      icon: "pi pi-exclamation-triangle",
+      accept: () => {
+          this.apiService.deleteForderLibrary(Id).subscribe( response=> {
+
+          })
+      }
+    }) */
+  }
+
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();

@@ -73,6 +73,6 @@ export class ApiService {
   }
 
   deleteForderLibrary(Id: number): Observable<any> {
-    return this.http.delete(`${hhqapi}/api/Library`+ Id)
+    return this.http.delete(`${hhqapi}/api/Library`+Id)
   }
 }
