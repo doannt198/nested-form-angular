@@ -71,4 +71,8 @@ export class ApiService {
   setForderLibrary(data: any): Observable<any> {
     return this.http.post(`${hhqapi}/api/Library`, data)
   }
+
+  deleteForderLibrary(Id: number): Observable<any> {
+    return this.http.delete(`${hhqapi}/api/Library`+ Id)
+  }
 }

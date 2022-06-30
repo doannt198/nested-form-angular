@@ -221,7 +221,7 @@ export class ThuVienAnhComponent implements OnInit {
   addForder(): void {
     const dataSave = {...this.dataAddForder, Name: this.forder }
     this.apiService.setForderLibrary(dataSave).subscribe((response)=> {
-        console.log("reponse",response)
+        console.log("reponse", response)
     })
   }
   ngOnDestroy() {
