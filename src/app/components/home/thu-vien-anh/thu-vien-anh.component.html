@@ -18,7 +18,7 @@
 
             </div>
             <div class="tree mt-3">
-                <p-tree [value]="roots" [(ngModel)]="selectedNodes" selectionMode="single" [(selection)]="selectedFile" (onNodeSelect)="handleSelectNode($event)" [contextMenu]="cm">
+                <p-tree [value]="roots" [(ngModel)]="selectedNodes" selectionMode="single" [(selection)]="selectedFile" (onNodeContextMenuSelect)="handleSelectContextMenu($event)" (onNodeSelect)="handleSelectNode($event)" [contextMenu]="cm">
                 </p-tree>
             </div>
              <p-contextMenu #cm [model]="items"></p-contextMenu> 
