@@ -50,6 +50,10 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { OrganizationChartModule } from 'primeng/organizationchart';
 import { InputTextModule } from 'primeng/inputtext';
 import { ThemSuaSliderComponent } from './components/home/them-sua-slider/them-sua-slider.component';
+import { SlideFormComponent } from './common/slide-form/slide-form.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { CheckboxModule } from 'primeng/checkbox';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -71,6 +75,7 @@ import { ThemSuaSliderComponent } from './components/home/them-sua-slider/them-s
     ThuVienAnhComponent,
     ThuVienComponent,
     ThemSuaSliderComponent,
+    SlideFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +107,10 @@ import { ThemSuaSliderComponent } from './components/home/them-sua-slider/them-s
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFirestoreModule,
-    TreeSelectModule
+    TreeSelectModule,
+    PaginatorModule,
+    CheckboxModule,
+    TableModule
   ],
   providers: [ConfirmationService, MessageService, AuthGuardGuard],
   bootstrap: [AppComponent],
