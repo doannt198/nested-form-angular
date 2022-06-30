@@ -46,6 +46,10 @@ export class ApiService {
     return this.http.get('./../../assets/autocomplate.json');
   }
 
+  getOrganize(): Observable<any> {
+    return this.http.get('./../../assets/organize.json')
+  }
+
   /* APi học hiệu quả */
   getListSlide(queryParams: any): Observable<any> {
     return this.http.get<any>(`${hhqapi}/api/Slide?` + queryParams);

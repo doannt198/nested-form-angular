@@ -29,6 +29,8 @@ export class ArrayComponent implements OnInit {
   filterItem: any;
   selectItem: any;
   results: any;
+  organire: any;
+  selectOrganire: any 
   status: any = [
     { lable: 'Tất cả', value: 1 },
     { lable: 'Loại 1', value: 2 },
@@ -71,7 +73,8 @@ export class ArrayComponent implements OnInit {
   feathData(): void {
    this.getTree();
    this.getConvertTree();
-   this.getAutoCompete()
+   this.getAutoCompete();
+   this.getOrganize()
   }
 
   getTree():void {
@@ -163,6 +166,16 @@ export class ArrayComponent implements OnInit {
     this.submited = true
     const infomation = {...this.user, urlimage : this.Urlimage }
     console.log("dataSave", infomation)
+  }
+
+/*   Dropdown */
+
+  getOrganize(): void {
+    this.apiService.getOrganize()
+    .subscribe((response) =>{
+      console.log("response", response)
+      this.organire = response.data
+    })
   }
 
 /*   autoComplete */
