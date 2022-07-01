@@ -38,4 +38,31 @@ if (recursiveFunction(arr, x, 0, arr.length-1))
 else document.write("Element not found!<br>");
 </script> 
 
+/////////////////////////////////////////////////////////////////
 
+function array_binarySearch(narray, delement) {
+   var mposition = Math.floor(narray.length / 2);
+
+   if (narray[mposition].name === delement){
+      return mposition;
+   }
+   else if (narray.length === 1) 
+   {
+      return null;
+   }
+   else if (narray[mposition].name < delement) {
+      var arr = narray.slice(mposition + 1);
+      var res = array_binarySearch(arr, delement);
+      if (res === null)
+      {
+         return null;
+      }
+      else {
+         return mposition + 1 + res;
+      }
+   }
+   else {
+      var arr1 = narray.slice(0, mposition);
+      return array_binarySearch(arr1, delement);
+   }
+}
