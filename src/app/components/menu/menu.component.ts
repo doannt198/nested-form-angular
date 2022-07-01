@@ -66,6 +66,11 @@ export class MenuComponent implements OnInit {
         icon: 'pi pi-image',
         routerLink: '/home/them-sua-slider',
       },
+      { 
+        label: 'Work',
+        icon: 'pi pi-image',
+        routerLink: '/home/work',
+      },
     ];
   }
   

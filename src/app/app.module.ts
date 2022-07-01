@@ -54,6 +54,7 @@ import { SlideFormComponent } from './common/slide-form/slide-form.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TableModule } from 'primeng/table';
+import { WorkComponent } from './components/home/work/work.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { TableModule } from 'primeng/table';
     ThuVienComponent,
     ThemSuaSliderComponent,
     SlideFormComponent,
+    WorkComponent,
   ],
   imports: [
     BrowserModule,
