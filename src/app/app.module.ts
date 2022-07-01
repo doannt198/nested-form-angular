@@ -105,7 +105,7 @@ import { WorkComponent } from './components/home/work/work.component';
     PasswordModule,
     InputTextModule,
     ContextMenuModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    /* AngularFireModule.initializeApp(environment.firebase), */
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFirestoreModule,
