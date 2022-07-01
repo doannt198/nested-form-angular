@@ -72,7 +72,7 @@ export class ThuVienAnhComponent implements OnInit {
   getLibrariesFolder(): void {
     this.apiService.getLibrariesFolder().subscribe({
       next: (response) => {
-        this.list = response.Data.Data;
+        this.list = response.data.data;
         this.convertJsonToStructTree(this.list);
         console.log('lis', this.list);
       },
@@ -135,7 +135,7 @@ export class ThuVienAnhComponent implements OnInit {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
         next: (response) => {
-          this.listFile = response.Data.Data;
+          this.listFile = response.data.data;
         },
         error: (error) => {
           console.log('error', error);
