@@ -31,7 +31,7 @@ export class SlideFormComponent implements OnInit {
         .getListDetailSlider(this.selectSlider.Id)
         .subscribe({
           next: (response) => {
-            this.detail = response.Data;
+            this.detail = response.data;
           console.log("detaillllllllll", this.detail)
           this.detail.Status = this.detail.Status == 1 ? true : false
             console.log("chi tiết", this.detail.Status)

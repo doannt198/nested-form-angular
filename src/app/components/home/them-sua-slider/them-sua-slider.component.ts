@@ -53,8 +53,8 @@ export class ThemSuaSliderComponent implements OnInit {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
         next: (response) => {
-          this.dataList = response.Data.Data;
-          this.totalRecord = response.Data.RecordsTotal;
+          this.dataList = response.data.data;
+          this.totalRecord = response.data.RecordsTotal;
         },
         error: (error) => {
           console.log('error', error);
