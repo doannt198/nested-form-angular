@@ -1,6 +1,13 @@
-1.Tìm kiếm tuyến tính
+1.Tìm kiếm tuyến tính:
 
-
+linearSearch(arr: any , key: string) {
+    for(let i =0; i< arr.length;i++) {
+      if(arr[i].full_name ===key) {
+        return i
+      }
+    }
+    return -1
+  }
 
 2.Tìm kiếm nhị phân
 
@@ -39,7 +46,7 @@ else document.write("Element not found!<br>");
 </script> 
 
 /////////////////////////////////////////////////////////////////
-
+ Cách số 02:
 function array_binarySearch(narray, delement) {
    var mposition = Math.floor(narray.length / 2);
 
