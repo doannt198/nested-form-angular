@@ -50,6 +50,9 @@ export class ApiService {
     return this.http.get('./../../assets/organize.json')
   }
 
+  getPhepNam() :Observable<any> {
+    return this.http.get('./../../assets/phepnam.json')
+  }
   /* APi học hiệu quả */
   getListSlide(queryParams: any): Observable<any> {
     return this.http.get<any>(`${hhqapi}/api/Slide?` + queryParams);

@@ -1,1 +1,12 @@
-<button (click)="show()">HH</button>
+<h1>Thuật toán tìm kiếm tuần tự</h1>
+<div class="timkiem flex mt-3">
+	<span class="p-float-label">
+		<input id="float-input" type="text" pInputText [(ngModel)]="value2">
+		<label for="float-input">Nhập từ khóa</label>
+	</span>
+	<p-button label="Tìm kiếm" class="ml-3" (ckick)="show()"></p-button>
+</div>
+
+<div class="message mt-5" >
+	 Phần tử vừa tìm và vị  trí {{value2}} có vị trí là {{resultSearch}}
+</div>
