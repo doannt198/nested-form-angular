@@ -1,6 +1,6 @@
-<div class="grid">
+<!-- <div class="grid">
 	<div class="col-6">
-		<h1>Thuật toán tìm kiếm tuần tự</h1>
+
 		<div class="timkiem flex mt-5">
 			<span class="p-float-label">
 				<input id="float-input" type="text" pInputText [(ngModel)]="value2">
@@ -14,7 +14,7 @@
 		</div>
 		<div class="mt-3"></div>
 
-		<h1>Thuật toán tìm kiếm Nhị phân</h1>
+	
 		<div class="timkiem flex mt-5">
 			<span class="p-float-label">
 				<input id="float-input" type="text" pInputText [(ngModel)]="keyword">
@@ -26,7 +26,7 @@
 		<div class="message mt-5">
 			Phần tử vừa tìm và vị trí {{keyword}} có vị trí là {{resultSearchNhiPhan}}
 		</div>
-	</div>
+	</div> -->
 	<!-- <div class="col-6">
 		<h1>Thuật toán sắp xếp thường</h1>
 		<div class="timkiem flex mt-5">
@@ -67,4 +67,15 @@
 			Phần tử vừa tìm và vị trí {{keyword}} có vị trí là {{resultSearchNhiPhan}}
 		</div>
 	</div> -->
+<!-- </div> -->
+ <button (click)="Sort()"> Click</button> 
+
+<div class="timkiem flex mt-5">
+	<span class="p-float-label">
+		<input id="float-input" type="text" pInputText [(ngModel)]="keyword">
+		<label for="float-input">Nhập từ khóa</label>
+	</span>
+	<p-button label="Tìm kiếm" class="ml-3" (click)="show2()"></p-button>
 </div>
+
+{{resultSearchNhiPhan|json}}
