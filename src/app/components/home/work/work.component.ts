@@ -143,7 +143,8 @@ export class WorkComponent implements OnInit {
   }
 
   show2() {
-    this.resultSearchNhiPhan = this.binarySearch(this.sunshine, this.keyword)
+    this.resultSearchNhiPhan = this.binarySearch(this.sunshine, this.keyword);
+    console.log("Kết quả", this.resultSearchNhiPhan)
   }
 
   
