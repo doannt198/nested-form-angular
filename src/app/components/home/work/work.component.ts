@@ -118,7 +118,7 @@ export class WorkComponent implements OnInit {
     }
     return -1;
   }
-  /*  Thuật toán sắp sếp nhị phân */
+  /*  Sắp xếp nhị phân */
   Sort() {
     this.sortItems(this.sunshine);
     console.log(this.sunshine);
@@ -146,8 +146,6 @@ export class WorkComponent implements OnInit {
     this.resultSearchNhiPhan = this.binarySearch(this.sunshine, this.keyword);
     console.log("Kết quả", this.resultSearchNhiPhan)
   }
-
-  
 
   sortItems(a: any) {
     for (let i = 0; i < a.length; i++) {
