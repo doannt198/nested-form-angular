@@ -22,9 +22,9 @@ import { AuthGuardGuard } from './services/auth-guard.guard';
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   
-  { path: 'login',
+  /* { path: 'login',
    component: LoginComponent
-  },
+  }, */
   {
     path: 'home',
     component: HomeComponent,

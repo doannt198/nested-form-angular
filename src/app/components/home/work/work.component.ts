@@ -95,6 +95,7 @@ export class WorkComponent implements OnInit {
         organizationName: 'Hệ thống trường học Sunshine Maple Bear',
       },
     ];
+    this.getTest();
   }
 
   getPhepNam(): void {
@@ -162,4 +163,13 @@ export class WorkComponent implements OnInit {
     }
     return a;
   }
+ 
+  getTest() {
+      var i= 0;
+      for(i=0; i< 10;i++) {
+        i++
+        console.log(i)
+      }
+  }
+  
 }
