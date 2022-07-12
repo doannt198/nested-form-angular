@@ -11,22 +11,24 @@ export class WorkComponent implements OnInit {
   value2: any;
   showmesage = false;
   results: any;
+
   resultSearch: any;
   resultSearchNhiPhan: any;
   keyword: any;
   number: Array<any>;
   sunshine: any;
+  ketqua: any;
+  selectedCity: any
   ngOnInit(): void {
-    this.getPhepNam();
     this.getTest();
   }
 
-  getPhepNam(): void {
+  /* getPhepNam(): void {
     this.apiService.getPhepNam().subscribe((response) => {
       console.log('phép năm', response);
       this.results = response;
     });
-  }
+  } */
 
   show() {
     this.resultSearch = this.linearSearch(this.results, this.value2);
@@ -88,11 +90,11 @@ export class WorkComponent implements OnInit {
   }
  
   getTest() {
-      var i= 0;
-      for(i=0; i< 10;i++) {
-        i++
-        console.log(i)
-      }
+    fetch("../../../../assets/organize.json")
+    .then(async (response)=> {
+      this.ketqua = await response.json();
+      console.log("ketqua", this.ketqua)
+    })
+    .catch((error)=> console.log("error", error))
   }
-  
 }
