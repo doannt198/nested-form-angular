@@ -17,7 +17,7 @@ export class UploadAnhComponent implements OnInit {
   ) { }
     dataUser: any
     user = {
-      Year: "",
+      Age: "",
       Brithday: "",
       Gmail: "",
       Name: "",
@@ -30,6 +30,11 @@ export class UploadAnhComponent implements OnInit {
 
   onSave():void {
     this.dataUser.unshift(this.user)
+    this.user.Age =""
+    this.user.Brithday =""
+    this.user.Gmail =""
+    this.user.Name =""
+    this.user.price =""
   }
 
   onSortByName(): void {

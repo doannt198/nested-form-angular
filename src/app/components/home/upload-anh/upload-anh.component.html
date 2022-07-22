@@ -6,29 +6,31 @@
     <div class="grid">
         <div class="col-6">
             
-            <!-- <form (ngSubmit)="onSave()" #save="ngForm">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Year</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1"  name="Year" [(ngModel)]="user.Year">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.Name" name="Name">
-                </div>
-                <div class="mb-3 ">
-                    <label for="exampleInputPassword1" class="form-label">Brithday</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.Brithday" name="Brithday">
-                </div>
-                <div class="mb-3 ">
-                    <label for="exampleInputPassword1" class="form-label">Gmail</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1"[(ngModel)]="user.Gmail" name="Gmail">
-                </div>
-                <div class="mb-3 ">
-                    <label for="exampleInputPassword1" class="form-label">price</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.price" name="price">
+            <form (ngSubmit)="onSave()" #save="ngForm">
+                <div class="grid">
+                    <div class="col-6">
+                         <label for="exampleInputEmail1" class="form-label">Year</label>
+                         <input type="text" class="form-control" id="exampleInputEmail1"  name="Year" [(ngModel)]="user.Age">
+                    </div>
+                    <div class="col-6">
+                        <label for="exampleInputPassword1" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.Name" name="Name">
+                    </div>
+                    <div class="col-6">
+                        <label for="exampleInputPassword1" class="form-label">Brithday</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.Brithday" name="Brithday">
+                    </div>
+                    <div class="col-6">
+                         <label for="exampleInputPassword1" class="form-label">Gmail</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1"[(ngModel)]="user.Gmail" name="Gmail">
+                    </div>
+                    <div class="col-6">
+                        <label for="exampleInputPassword1" class="form-label">price</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.price" name="price">
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>
-              </form> -->
+              </form>
         </div>
         <div class="col-6">
             <button type="submit" icon="pi pi-sort-alpha-down
@@ -68,7 +70,7 @@
             </p-table>   
             <div class="mt-3" >
                 <button type="submit" icon="pi pi-sort-alpha-down
-                " class="btn btn-primary "(click)="getTotalAge()">Tổng số</button>
+                " class="btn btn-primary "(click)="getTotalAge()">Tổng </button>
                 Tổng số lever: {{totalLever}}
             </div>
         </div>
