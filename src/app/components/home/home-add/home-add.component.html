@@ -5,17 +5,17 @@
             <form (submit)="onSubmit(submitform)" #submitform="ngForm">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="name" name="name"
+                    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="data.name" name="name"
                         aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Des</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="description"
+                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.description"
                         name="description">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Url</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="url" name="url">
+                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.url" name="url">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

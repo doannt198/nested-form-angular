@@ -4,6 +4,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { DialogModule } from 'primeng/dialog';
 import { PrimeNGConfig } from 'primeng/api';
 import { ConfirmationService } from 'primeng/api';
+import { ProductModel } from 'src/app/model/user.model';
 @Component({
   selector: 'app-home-add',
   templateUrl: './home-add.component.html',
@@ -11,12 +12,10 @@ import { ConfirmationService } from 'primeng/api';
 })
 export class HomeAddComponent implements OnInit {
   listProduct: any = [];
-  name: string = '';
-  description: string = '';
-  url: string = '';
   displayEdit: boolean = false;
   idEdit = 0;
   getList: any;
+  data: ProductModel = new ProductModel()
   user = [
     { name: 'A', age: 18, status: true },
     { name: 'A', age: 18, status: true },
@@ -57,18 +56,19 @@ export class HomeAddComponent implements OnInit {
         const index = this.listProduct.findIndex(
           (e: any) => e.id === this.idEdit
         );
-        this.listProduct[index].name = this.name;
-        this.listProduct[index].description = this.description;
-        this.listProduct[index].url = this.url;
+        this.listProduct[index].name = this.data.name;
+        this.listProduct[index].description = this.data.description;
+        this.listProduct[index].url = this.data.url;
       });
     } else {
       this.apiService.addProduct(submitform.value).subscribe((res) => {
-        (this.name = ''),
-          (this.description = ''),
-          (this.url = ''),
+        (this.data.name = ''),
+          (this.data.description = ''),
+          (this.data.url = ''),
           this.getListProduct();
       });
     }
+      console.log(this.data)
   }
 
   onDelete(item: any) {

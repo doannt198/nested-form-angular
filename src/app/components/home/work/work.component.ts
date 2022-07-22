@@ -23,12 +23,6 @@ export class WorkComponent implements OnInit {
     this.getTest();
   }
 
-  /* getPhepNam(): void {
-    this.apiService.getPhepNam().subscribe((response) => {
-      console.log('phép năm', response);
-      this.results = response;
-    });
-  } */
 
   show() {
     this.resultSearch = this.linearSearch(this.results, this.value2);
@@ -37,7 +31,7 @@ export class WorkComponent implements OnInit {
   }
 
   linearSearch(arr: any, key: string) {
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {   
       if (arr[i].full_name === key) {
         return i;
       }
@@ -88,13 +82,7 @@ export class WorkComponent implements OnInit {
     }
     return a;
   }
- 
   getTest() {
-    fetch("../../../../assets/organize.json")
-    .then(async (response)=> {
-      this.ketqua = await response.json();
-      console.log("ketqua", this.ketqua)
-    })
-    .catch((error)=> console.log("error", error))
+        
   }
 }
