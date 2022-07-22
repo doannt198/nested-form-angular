@@ -5,7 +5,9 @@
       "Age": "20",
       "Gmail": "abc@gmail.com",
       "Brithday": "10/10/2010", 
+      "soLike": "Bóng đá",
       "lever" : 200
+
     },
     {
       "ID": 2,
@@ -13,6 +15,7 @@
       "Age": "13",
       "Gmail": "nguyenvan@gmail.com",
       "Brithday": "07/03/2014",
+      "soLike": "Bóng đá",
       "lever" : 150
     },
     {
@@ -21,6 +24,7 @@
       "Age": "10",
       "Gmail": "admin123@gmail.com",
       "Brithday": "09/06/2008",
+      "soLike": "Bóng đá",
       "lever" : 300
     },
     {
@@ -29,6 +33,7 @@
       "Age": "17",
       "Gmail": "mnb@gmail.com",
       "Brithday": "04/05/2005",
+      "soLike": "Bóng đá",
       "lever" : 450
     },
     {
@@ -37,6 +42,7 @@
       "Age": "25",
       "Gmail": "hkdl@gmail.com",
       "Brithday": "04/02/2009",
+      "soLike": "Bóng đá",
       "lever" : 500
     }
   ]

@@ -9,8 +9,8 @@
             <form (ngSubmit)="onSave()" #save="ngForm">
                 <div class="grid">
                     <div class="col-6">
-                         <label for="exampleInputEmail1" class="form-label">Age </label> <br>
-                         <p-chips name="Age" style="width:100px" [(ngModel)]="user.Age"></p-chips> 
+                         <label for="exampleInputEmail1" class="form-label">Age </label> 
+                         <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.Age" name="Age"> 
                     </div>
                     <div class="col-6">
                         <label for="exampleInputPassword1" class="form-label">Name</label>
@@ -23,6 +23,10 @@
                     <div class="col-6">
                          <label for="exampleInputPassword1" class="form-label">Gmail</label>
                         <input type="text" class="form-control" id="exampleInputPassword1"[(ngModel)]="user.Gmail" name="Gmail">
+                    </div>
+                    <div class="col-6">
+                         <label for="exampleInputPassword1" class="form-label">Solike</label>
+                         <p-chips name="soLike"[(ngModel)]="user.soLike"></p-chips> 
                     </div>
                     <div class="col-6">
                         <label for="exampleInputPassword1" class="form-label">Lever</label>
@@ -51,6 +55,7 @@
                         <th>Brithday</th>
                         <th>Gmail</th>
                         <th>lever</th>
+                        <th>Solike</th>
                         <th>Option</th>
                     </tr>
                 </ng-template>
@@ -60,6 +65,7 @@
                             <td>{{dataUser.Name}}</td>
                             <td>{{dataUser.Brithday}}</td>
                             <td>{{dataUser.Gmail}}</td>
+                            <td>{{dataUser.soLike}}</td>
                             <td>{{dataUser.lever}}</td>
                             <td>
                                 <button pButton pRipple type="button" icon="pi pi-pencil" (click)="onEdit(dataUser)"class="p-button-rounded p-button-outlined"></button>
