@@ -30,7 +30,7 @@ export class UploadAnhComponent implements OnInit {
   }
 
   onSave():void {
-   /*  this.dataUser.unshift(this.user) */
+    this.dataUser.unshift(this.user)
     console.log(this.user)
   } 
 
