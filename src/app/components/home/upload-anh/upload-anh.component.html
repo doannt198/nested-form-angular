@@ -9,8 +9,8 @@
             <form (ngSubmit)="onSave()" #save="ngForm">
                 <div class="grid">
                     <div class="col-6">
-                         <label for="exampleInputEmail1" class="form-label">Age </label>
-                         <input type="text" class="form-control" id="exampleInputEmail1"  name="Year" [(ngModel)]="user.Age">
+                         <label for="exampleInputEmail1" class="form-label">Age </label> <br>
+                         <p-chips name="Age" style="width:100px" [(ngModel)]="user.Age"></p-chips> 
                     </div>
                     <div class="col-6">
                         <label for="exampleInputPassword1" class="form-label">Name</label>
@@ -25,14 +25,15 @@
                         <input type="text" class="form-control" id="exampleInputPassword1"[(ngModel)]="user.Gmail" name="Gmail">
                     </div>
                     <div class="col-6">
-                        <label for="exampleInputPassword1" class="form-label">price</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.price" name="price">
+                        <label for="exampleInputPassword1" class="form-label">Lever</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.lever" name="lever">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>
               </form>
         </div>
         <div class="col-6">
+        
             <button type="submit" icon="pi pi-sort-alpha-down
             " class="btn btn-primary mb-3 mr-3" (click)="onSortByName()">Sắp xếp theo tên </button>
             <button type="submit" icon="pi pi-sort-alpha-down
@@ -61,7 +62,8 @@
                             <td>{{dataUser.Gmail}}</td>
                             <td>{{dataUser.lever}}</td>
                             <td>
-                                <button pButton pRipple type="button" icon="pi pi-times" (click)="onDelete(dataUser.ID)"class="p-button-rounded p-button-outlined"></button>
+                                <button pButton pRipple type="button" icon="pi pi-pencil" (click)="onEdit(dataUser)"class="p-button-rounded p-button-outlined"></button>
+                                <button pButton pRipple type="button" icon="pi pi-times" (click)="onDelete(dataUser.ID)"class="p-button-rounded p-button-outlined "></button>
                             </td>
                         </tr>
                     </ng-template>

@@ -56,6 +56,9 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { TableModule } from 'primeng/table';
 import { WorkComponent } from './components/home/work/work.component';
 import { UploadAnhComponent } from './components/home/upload-anh/upload-anh.component';
+import { ChipsModule } from 'primeng/chips';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+
 
 @NgModule({
   declarations: [
@@ -106,6 +109,7 @@ import { UploadAnhComponent } from './components/home/upload-anh/upload-anh.comp
     TreeModule,
     PasswordModule,
     InputTextModule,
+    ToggleButtonModule,
     ContextMenuModule,
     AngularFireModule.initializeApp(environment.firebase), 
     AngularFireDatabaseModule,
@@ -114,6 +118,7 @@ import { UploadAnhComponent } from './components/home/upload-anh/upload-anh.comp
     TreeSelectModule,
     PaginatorModule,
     CheckboxModule,
+    ChipsModule,
     TableModule
   ],
   providers: [ConfirmationService, MessageService, AuthGuardGuard],

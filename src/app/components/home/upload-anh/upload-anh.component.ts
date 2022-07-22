@@ -21,7 +21,7 @@ export class UploadAnhComponent implements OnInit {
       Brithday: "",
       Gmail: "",
       Name: "",
-      price: "",
+      lever: "",
     }
     filter: any
   ngOnInit(): void {
@@ -30,11 +30,15 @@ export class UploadAnhComponent implements OnInit {
 
   onSave():void {
     this.dataUser.unshift(this.user)
-    this.user.Age =""
-    this.user.Brithday =""
-    this.user.Gmail =""
-    this.user.Name =""
-    this.user.price =""
+    console.log(this.user)
+  } 
+
+  onEdit(item: any):void {
+    this.user.Age = item.Age
+    this.user.Brithday = item.Brithday
+    this.user.Gmail = item.Gmail
+    this.user.Name = item.Name
+    this.user.lever = item.lever
   }
 
   onSortByName(): void {
