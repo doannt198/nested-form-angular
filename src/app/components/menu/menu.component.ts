@@ -71,6 +71,11 @@ export class MenuComponent implements OnInit {
         icon: 'pi pi-image',
         routerLink: '/home/work',
       },
+      { 
+        label: 'Upload ảnh',
+        icon: 'pi pi-image',
+        routerLink: '/home/upload-anh',
+      },
     ];
   }
   

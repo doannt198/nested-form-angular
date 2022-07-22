@@ -14,6 +14,7 @@ import { TemplateDrivenFormComponent } from './components/home/template-driven-f
 import { ThemSuaSliderComponent } from './components/home/them-sua-slider/them-sua-slider.component';
 import { ThuVienAnhComponent } from './components/home/thu-vien-anh/thu-vien-anh.component';
 import { ThuVienComponent } from './components/home/thu-vien/thu-vien.component';
+import { UploadAnhComponent } from './components/home/upload-anh/upload-anh.component';
 import { WorkComponent } from './components/home/work/work.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -92,6 +93,11 @@ const appRoutes: Routes = [
       {
         path: 'work',
         component: WorkComponent,
+        canActivate: [AuthGuardGuard]
+      },
+      {
+        path: 'upload-anh',
+        component: UploadAnhComponent,
         canActivate: [AuthGuardGuard]
       },
 

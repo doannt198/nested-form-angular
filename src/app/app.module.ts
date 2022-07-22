@@ -55,6 +55,7 @@ import { PaginatorModule } from 'primeng/paginator';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TableModule } from 'primeng/table';
 import { WorkComponent } from './components/home/work/work.component';
+import { UploadAnhComponent } from './components/home/upload-anh/upload-anh.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { WorkComponent } from './components/home/work/work.component';
     ThemSuaSliderComponent,
     SlideFormComponent,
     WorkComponent,
+    UploadAnhComponent,
   ],
   imports: [
     BrowserModule,
