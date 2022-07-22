@@ -1,3 +1,78 @@
-<input type="file" id="upload">
+<!-- <input type="file" id="upload">
 
-<button>push</button>
+<button>Tải lên</button> -->
+
+<div class="table-wraper">
+    <div class="grid">
+        <div class="col-6">
+            
+            <!-- <form (ngSubmit)="onSave()" #save="ngForm">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Year</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1"  name="Year" [(ngModel)]="user.Year">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.Name" name="Name">
+                </div>
+                <div class="mb-3 ">
+                    <label for="exampleInputPassword1" class="form-label">Brithday</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.Brithday" name="Brithday">
+                </div>
+                <div class="mb-3 ">
+                    <label for="exampleInputPassword1" class="form-label">Gmail</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1"[(ngModel)]="user.Gmail" name="Gmail">
+                </div>
+                <div class="mb-3 ">
+                    <label for="exampleInputPassword1" class="form-label">price</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.price" name="price">
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+              </form> -->
+        </div>
+        <div class="col-6">
+            <button type="submit" icon="pi pi-sort-alpha-down
+            " class="btn btn-primary mb-3 mr-3" (click)="onSortByName()">Sắp xếp theo tên </button>
+            <button type="submit" icon="pi pi-sort-alpha-down
+            " class="btn btn-primary mb-3 mr-3" (click)="onSortByYear()">Sắp xếp theo tuổi </button>
+            <button type="submit" icon="pi pi-sort-alpha-down
+            " class="btn btn-primary mb-3 mr-3" (click)="onSortByDate()">Sắp xếp theo ngày, tháng </button>
+            <input type="text" pInputText [(ngModel)]="filter"/>
+            <button type="submit" icon="pi pi-sort-alpha-down
+            " class="btn btn-primary mb-3 ml-3" (click)="onFilter()">Tìm kiếm</button>
+            <p-table [value]="dataUser" esponsiveLayout="scroll" >
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Age</th>
+                        <th>Name</th>
+                        <th>Brithday</th>
+                        <th>Gmail</th>
+                        <th>lever</th>
+                        <th>Option</th>
+                    </tr>
+                </ng-template>
+                    <ng-template pTemplate="body" let-dataUser>
+                        <tr>
+                            <td>{{dataUser.Age}}</td>
+                            <td>{{dataUser.Name}}</td>
+                            <td>{{dataUser.Brithday}}</td>
+                            <td>{{dataUser.Gmail}}</td>
+                            <td>{{dataUser.lever}}</td>
+                            <td>
+                                <button pButton pRipple type="button" icon="pi pi-times" (click)="onDelete(dataUser.ID)"class="p-button-rounded p-button-outlined"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                   
+                    <ng-template #er> Không có dữ liệu </ng-template>
+            </p-table>   
+            <div class="mt-3" >
+                <button type="submit" icon="pi pi-sort-alpha-down
+                " class="btn btn-primary "(click)="getTotalAge()">Tổng số</button>
+                Tổng số lever: {{totalLever}}
+            </div>
+        </div>
+    </div>
+</div>
+
+

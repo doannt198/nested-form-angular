@@ -23,7 +23,7 @@
     "@tinymce/tinymce-angular": "^6.0.1",
     "ag-grid-angular": "^27.3.0",
     "ag-grid-community": "^27.3.0",
-    "bootstrap": "^5.1.3",
+    "bootstrap": "^5.2.0",
     "chart.js": "^3.8.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.3",

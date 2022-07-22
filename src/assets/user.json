@@ -1,0 +1,42 @@
+[
+    {
+      "ID": 1,
+      "Name": "Inception",
+      "Age": "20",
+      "Gmail": "abc@gmail.com",
+      "Brithday": "10/10/2010", 
+      "lever" : 200
+    },
+    {
+      "ID": 2,
+      "Name": "Interstellar",
+      "Age": "13",
+      "Gmail": "nguyenvan@gmail.com",
+      "Brithday": "07/03/2014",
+      "lever" : 150
+    },
+    {
+      "ID": 3,
+      "Name": "Avatar",
+      "Age": "10",
+      "Gmail": "admin123@gmail.com",
+      "Brithday": "09/06/2008",
+      "lever" : 300
+    },
+    {
+      "ID": 4,
+      "Name": "Batman Begins",
+      "Age": "17",
+      "Gmail": "mnb@gmail.com",
+      "Brithday": "04/05/2005",
+      "lever" : 450
+    },
+    {
+      "ID": 5,
+      "Name": "Avatar",
+      "Age": "25",
+      "Gmail": "hkdl@gmail.com",
+      "Brithday": "04/02/2009",
+      "lever" : 500
+    }
+  ]

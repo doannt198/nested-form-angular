@@ -53,6 +53,11 @@ export class ApiService {
   getPhepNam() :Observable<any> {
     return this.http.get('./../../assets/phepnam.json')
   }
+
+  getListUser() :Observable<any> {
+    return this.http.get('../../assets/user.json')
+  }
+  
   /* APi học hiệu quả */
   getListSlide(queryParams: any): Observable<any> {
     return this.http.get<any>(`${hhqapi}/api/Slide?` + queryParams);
@@ -95,4 +100,5 @@ export class ApiService {
   deleteSlider(Id: string): Observable<any> {
     return this.http.delete(`${hhqapi}/api/Slide/` + Id);
   }
+
 }
